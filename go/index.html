@@ -3,34 +3,47 @@
 <head>
   <meta charset="UTF-8" />
   <title>Redirecting...</title>
+
+  <!-- Prevent Safari from caching this page -->
+  <meta http-equiv="Cache-Control" content="no-store" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
   <script>
-    const ua = navigator.userAgent || navigator.vendor || window.opera;
-    let platform = "Other";
-    let destination = "";
+    (async () => {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+      let platform = "Other";
+      let destination = "";
 
-    if (/android/i.test(ua)) {
-      destination = "https://play.google.com/store/apps/details?id=com.saymo.app";
-      platform = "Android";
-    } else if (/iPad|iPhone|iPod/.test(ua)) {
-      destination = "https://testflight.apple.com/join/qq2aUTXh";
-      platform = "iOS";
-    } else {
-      destination = "https://linktr.ee/saymoapp";
-    }
+      if (/android/i.test(ua)) {
+        destination = "https://play.google.com/store/apps/details?id=com.saymo.app";
+        platform = "Android";
+      } else if (/iPad|iPhone|iPod/.test(ua)) {
+        destination = "https://testflight.apple.com/join/qq2aUTXh";
+        platform = "iOS";
+      } else {
+        destination = "https://linktr.ee/saymoapp";
+      }
 
-    // Send platform info to Azure Function
-    fetch("https://getsaymo-redirectlog-bggkftcef2bmdsed.westeurope-01.azurewebsites.net/api/trackRedirect", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ platform })
-    }).catch(console.error);
+      try {
+        await fetch("https://getsaymo-redirectlog-bggkftcef2bmdsed.westeurope-01.azurewebsites.net/api/trackRedirect", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Cache-Control": "no-cache"
+          },
+          cache: "no-store",
+          body: JSON.stringify({ platform })
+        });
+      } catch (error) {
+        console.error("Failed to log redirect:", error);
+      }
 
-    // Redirect after a short delay
-    setTimeout(() => {
-      window.location.href = destination;
-    }, 300);
+      // Redirect after slight delay
+      setTimeout(() => {
+        window.location.href = destination;
+      }, 300);
+    })();
   </script>
 </head>
 <body>
