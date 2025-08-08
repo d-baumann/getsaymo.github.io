@@ -20,7 +20,7 @@
       background: #f5f5f5;
     }
     .loading {
-      color: #555;
+      color: #666;
       font-size: 16px;
     }
   </style>
@@ -70,6 +70,9 @@
       };
       
       // Track with timeout to ensure redirect happens
+      let trackingCompleted = false;
+      let trackingMethod = 'none';
+      
       Promise.race([
         // Primary tracking
         fetch("https://getsaymo-redirectlog-bggkftcef2bmdsed.westeurope-01.azurewebsites.net/api/trackRedirect", {
@@ -80,10 +83,37 @@
           },
           cache: "no-store",
           body: JSON.stringify(trackingData)
-        }).catch(() => {}),
-        // Timeout after 500ms max
-        new Promise(resolve => setTimeout(resolve, 500))
+        }).then(response => {
+          trackingCompleted = true;
+          trackingMethod = 'fetch_success';
+          console.log('Tracking successful:', response.status);
+          return response;
+        }).catch(error => {
+          console.log('Fetch failed:', error);
+          trackingMethod = 'fetch_failed';
+          throw error;
+        }),
+        // Timeout after 800ms max (increased for mobile)
+        new Promise(resolve => setTimeout(() => {
+          if (!trackingCompleted) {
+            trackingMethod = 'timeout';
+            console.log('Tracking timed out');
+          }
+          resolve();
+        }, 800))
       ]).finally(() => {
+        // Try beacon API as last resort for mobile
+        if (!trackingCompleted && 'sendBeacon' in navigator) {
+          try {
+            navigator.sendBeacon(
+              "https://getsaymo-redirectlog-bggkftcef2bmdsed.westeurope-01.azurewebsites.net/api/trackRedirect",
+              JSON.stringify({...trackingData, method: 'beacon'})
+            );
+            console.log('Beacon sent');
+          } catch (e) {
+            console.log('Beacon failed:', e);
+          }
+        }
         doRedirect();
       });
       
@@ -102,7 +132,7 @@
 </head>
 <body>
   <div class="loading">
-    <p>Redirecting...</p>
+    <p>Redirecting you to the right place...</p>
     <p><small>If you're not redirected automatically, <a href="https://linktr.ee/saymoapp" id="fallback-link">click here</a>.</small></p>
   </div>
   
