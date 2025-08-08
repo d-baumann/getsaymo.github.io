@@ -3,50 +3,123 @@
 <head>
   <meta charset="UTF-8" />
   <title>Redirecting...</title>
-
-  <!-- Prevent Safari from caching this page -->
+  <!-- Prevent caching -->
   <meta http-equiv="Cache-Control" content="no-store" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-
+  <!-- Fallback for no-JS users -->
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=https://linktr.ee/saymoapp" />
+  </noscript>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+      background: #f5f5f5;
+    }
+    .loading {
+      color: #555;
+      font-size: 16px;
+    }
+  </style>
   <script>
-    (async () => {
+    (() => {
       const ua = navigator.userAgent || navigator.vendor || window.opera;
-      let platform = "Other";
-      let destination = "";
-
-      if (/android/i.test(ua)) {
-        destination = "https://play.google.com/store/apps/details?id=com.saymo.app";
-        platform = "Android";
-      } else if (/iPad|iPhone|iPod/.test(ua)) {
+      const isRedditApp = /reddit/i.test(ua);
+      const isInAppBrowser = /FBAN|FBAV|Instagram|Twitter|Line|WeChat|TikTok/.test(ua);
+      
+      let platform = "Web";
+      let destination = "https://linktr.ee/saymoapp"; // Safe default
+      
+      // Enhanced iOS detection (handles Reddit app edge cases)
+      if ((/iPad|iPhone|iPod/.test(ua) || (isRedditApp && /iOS|iPhone|iPad/.test(ua))) && !window.MSStream) {
         destination = "https://testflight.apple.com/join/qq2aUTXh";
         platform = "iOS";
-      } else {
-        destination = "https://linktr.ee/saymoapp";
+      } 
+      // Android detection
+      else if (/android/i.test(ua)) {
+        destination = "https://play.google.com/store/apps/details?id=com.saymo.app";
+        platform = "Android";
       }
-
-      try {
-        await fetch("https://getsaymo-redirectlog-bggkftcef2bmdsed.westeurope-01.azurewebsites.net/api/trackRedirect", {
+      
+      // Preserve UTM parameters from ad campaigns
+      const currentParams = new URLSearchParams(window.location.search).toString();
+      if (currentParams) {
+        const separator = destination.includes('?') ? '&' : '?';
+        destination += separator + currentParams;
+      }
+      
+      // Enhanced tracking data
+      const trackingData = {
+        platform,
+        source: isRedditApp ? 'reddit_app' : (isInAppBrowser ? 'in_app_browser' : 'web_browser'),
+        userAgent: ua.substring(0, 200), // Truncate to avoid issues
+        referrer: document.referrer || 'direct',
+        timestamp: new Date().toISOString()
+      };
+      
+      // Function to perform redirect
+      const doRedirect = () => {
+        window.location.replace(destination);
+        // Fallback for edge cases where replace doesn't work
+        setTimeout(() => {
+          window.location.href = destination;
+        }, 100);
+      };
+      
+      // Track with timeout to ensure redirect happens
+      Promise.race([
+        // Primary tracking
+        fetch("https://getsaymo-redirectlog-bggkftcef2bmdsed.westeurope-01.azurewebsites.net/api/trackRedirect", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
             "Cache-Control": "no-cache"
           },
           cache: "no-store",
-          body: JSON.stringify({ platform })
-        });
-      } catch (error) {
-        console.error("Failed to log redirect:", error);
-      }
-
-      // Redirect after slight delay
+          body: JSON.stringify(trackingData)
+        }).catch(() => {}),
+        // Timeout after 500ms max
+        new Promise(resolve => setTimeout(resolve, 500))
+      ]).finally(() => {
+        doRedirect();
+      });
+      
+      // Backup pixel tracking (fire separately, don't wait for it)
+      try {
+        const img = new Image();
+        img.src = `https://getsaymo-redirectlog-bggkftcef2bmdsed.westeurope-01.azurewebsites.net/api/pixel?p=${encodeURIComponent(platform)}&s=${encodeURIComponent(trackingData.source)}&t=${Date.now()}`;
+      } catch (e) {}
+      
+      // Safety net - redirect after 1 second no matter what
       setTimeout(() => {
-        window.location.href = destination;
-      }, 200);
+        doRedirect();
+      }, 1000);
     })();
   </script>
 </head>
 <body>
-  <p>Redirecting you to the right place...</p>
+  <div class="loading">
+    <p>Redirecting you to the right place...</p>
+    <p><small>If you're not redirected automatically, <a href="https://linktr.ee/saymoapp" id="fallback-link">click here</a>.</small></p>
+  </div>
+  
+  <script>
+    // Update fallback link based on platform detection
+    setTimeout(() => {
+      const ua = navigator.userAgent || navigator.vendor || window.opera;
+      let fallbackUrl = "https://linktr.ee/saymoapp";
+      
+      if ((/iPad|iPhone|iPod/.test(ua) || /iOS|iPhone|iPad/.test(ua)) && !window.MSStream) {
+        fallbackUrl = "https://testflight.apple.com/join/qq2aUTXh";
+      } else if (/android/i.test(ua)) {
+        fallbackUrl = "https://play.google.com/store/apps/details?id=com.saymo.app";
+      }
+      
+      document.getElementById('fallback-link').href = fallbackUrl;
+    }, 50);
+  </script>
 </body>
 </html>
