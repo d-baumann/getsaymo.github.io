@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saymo Support</title>
+  <meta name="description" content="Support information for the Saymo app, including contact details, subscription help, troubleshooting, and legal links.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-top: rgba(96, 165, 250, 0.22);
+      --surface: rgba(255, 255, 255, 0.09);
+      --surface-border: rgba(255, 255, 255, 0.12);
+      --text-main: rgba(255, 255, 255, 0.9);
+      --text-muted: rgba(255, 255, 255, 0.7);
+      --text-soft: rgba(255, 255, 255, 0.62);
+      --accent: #f7d26a;
+      --accent-strong: #ffe6a0;
+    }
+
+    body {
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, var(--bg-top), transparent 35%),
+        linear-gradient(160deg, #101827 0%, #14243f 45%, #1c3555 100%);
+      color: white;
+      padding: 32px 20px 48px;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .topbar {
+      margin-bottom: 28px;
+    }
+
+    .back-link {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .back-link:hover {
+      color: white;
+    }
+
+    .hero {
+      margin-bottom: 26px;
+    }
+
+    h1 {
+      font-size: 44px;
+      line-height: 1.05;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--surface-border);
+      border-radius: 18px;
+      padding: 22px;
+      backdrop-filter: blur(14px);
+    }
+
+    .card h2 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      font-weight: 800;
+    }
+
+    .card p,
+    .card li {
+      color: var(--text-main);
+      line-height: 1.65;
+      font-size: 16px;
+    }
+
+    .card p + p {
+      margin-top: 12px;
+    }
+
+    .card ul {
+      list-style: none;
+    }
+
+    .card li + li {
+      margin-top: 10px;
+    }
+
+    .card li::before {
+      content: "•";
+      color: var(--accent);
+      margin-right: 10px;
+    }
+
+    .card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .card a:hover {
+      color: var(--accent-strong);
+    }
+
+    .contact-email {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .inline-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .subtle {
+      color: var(--text-soft);
+      font-size: 14px;
+      margin-top: 14px;
+    }
+
+    .section-label {
+      display: inline-block;
+      margin-top: 14px;
+      margin-bottom: 6px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    a:focus-visible {
+      outline: 3px solid rgba(242, 201, 76, 0.9);
+      outline-offset: 3px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 760px) {
+      body {
+        padding: 24px 16px 40px;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      .intro {
+        font-size: 17px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-email {
+        font-size: 19px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <a class="back-link" href="/">← Back to Saymo</a>
+    </div>
+
+    <section class="hero">
+      <h1>Need help with Saymo?</h1>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>General FAQ</h2>
+        <p><strong>What if speaking features are not working?</strong></p>
+        <p>Check microphone permissions, make sure the app is up to date, and restart the app.</p>
+        <p><strong>How do I report a bug or request a feature?</strong></p>
+        <p>Use the in-app feedback feature or otherwise reach us by email at the address below.</p>
+      </div>
+
+      <div class="card">
+        <h2>Subscriptions and Billing</h2>
+        <p>Saymo Plus subscriptions are managed through the store where you subscribed.</p>
+        <div class="section-label">Useful actions</div>
+        <ul>
+          <li>To restore a previous purchase, use the Restore Purchases option inside the app.</li>
+          <li>If Plus does not unlock after subscribing, first try Restore Purchases. If that does not fix it, contact support by email.</li>
+          <li>To cancel a subscription, manage it through your Apple App Store or Google Play account settings.</li>
+          <li>Refund requests are handled by Apple or Google Play under their own billing policies.</li>
+        </ul>
+        <div class="inline-links">
+          <a href="https://support.apple.com/en-us/118428" target="_blank" rel="noopener noreferrer">Manage Apple subscriptions</a>
+          <a href="https://support.google.com/googleplay/answer/7018481" target="_blank" rel="noopener noreferrer">Manage Google Play subscriptions</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Privacy and Data</h2>
+        <p>
+          If you have questions about privacy, data handling, or the app's policies, review the documents below or contact support by email.
+        </p>
+        <div class="inline-links">
+          <a href="https://docs.google.com/document/d/1JDI0zqQew5qYf_onqMew_70GPoFYibCCjEwSgM_9ulU/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+          <a href="https://docs.google.com/document/d/1AUX1rOXEYunQipf7cHtrGqblBVgvk0-PMkSgguSnfoc/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Terms of Use (EULA)</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Community</h2>
+        <p>If you want updates or community discussion, you can also join the Saymo Discord.</p>
+        <div class="inline-links">
+          <a href="https://discord.gg/kEw5uKkeKV" target="_blank" rel="noopener noreferrer">Join Discord</a>
+        </div>
+        <p class="subtle">Discord is optional and is not the primary support channel.</p>
+      </div>
+
+      <div class="card">
+        <h2>Contact Support</h2>
+        <p>For any support issue, billing question, bug report, or general feedback, contact:</p>
+        <a class="contact-email" href="mailto:ndebaumann@gmail.com">ndebaumann@gmail.com</a>
+        <p class="subtle">When possible, include your device model, OS version, app version, a short description of the issue, and any helpful screenshot or screen recording.</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
