@@ -270,30 +270,46 @@
       const stopTarget = stopSelector
         ? document.querySelector(stopSelector)
         : document.querySelector("[data-sticky-stop]");
+      const footer = dock.nextElementSibling && dock.nextElementSibling.matches(".site-footer")
+        ? dock.nextElementSibling
+        : document.querySelector(".site-footer");
 
       if (!stopTarget) return;
       let isResting = false;
       let frame = 0;
+      let deepestRestScrollY = 0;
 
       const update = () => {
         frame = 0;
 
+        const scrollY = window.scrollY || window.pageYOffset || 0;
         const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
         const stopRect = stopTarget.getBoundingClientRect();
-        const dockRect = dock.getBoundingClientRect();
-        const dockHeight = dockRect.height || 96;
+        const footerRect = footer ? footer.getBoundingClientRect() : null;
+        const dockHeight = dock.offsetHeight || dock.getBoundingClientRect().height || 96;
 
-        // Use separate hide/show thresholds so the dock does not flicker
-        // when the footer spacing changes near the final install block.
         const hideThreshold = viewportHeight - dockHeight - 24;
-        const showThreshold = viewportHeight - 24;
+        const shouldHide = stopRect.top <= hideThreshold || (footerRect && footerRect.top <= viewportHeight - 16);
 
-        if (!isResting && stopRect.top <= hideThreshold) {
+        if (!isResting && shouldHide) {
           isResting = true;
+          deepestRestScrollY = scrollY;
           dock.classList.add("is-resting");
-        } else if (isResting && stopRect.top > showThreshold) {
-          isResting = false;
-          dock.classList.remove("is-resting");
+          return;
+        }
+
+        if (isResting) {
+          deepestRestScrollY = Math.max(deepestRestScrollY, scrollY);
+
+          const revealDistance = Math.max(140, Math.round(dockHeight * 1.35));
+          const movedUpEnough = scrollY <= deepestRestScrollY - revealDistance;
+          const footerClear = !footerRect || footerRect.top > viewportHeight + 48;
+          const stopClear = stopRect.top > hideThreshold + 96;
+
+          if (movedUpEnough && footerClear && stopClear) {
+            isResting = false;
+            dock.classList.remove("is-resting");
+          }
         }
       };
 
