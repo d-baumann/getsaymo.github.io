@@ -55,55 +55,57 @@
     <div class="variant-nine__ambient-orb" data-parallax-speed="-1.32" style="--orb-size: 0.34rem; --orb-blur: 3px; --orb-opacity: 1; top: 196%; left: 54%; animation-delay: -19.2s; background: radial-gradient(circle, rgba(255, 252, 240, 1) 0%, rgba(255, 211, 168, 1) 54%, rgba(255, 123, 91, 0.64) 92%, transparent 100%);"></div>
   </div>
 
+  <template id="variant-nine-hero-stack-template">
+    <article class="showcase-card variant-nine__pane variant-nine__pane--one" data-hero-pane aria-hidden="true">
+      <div class="showcase-card__media">
+        <img src="assets/screenshots/cinematic_hobbies.jpg" alt="" width="540" height="1200" loading="eager" decoding="async">
+      </div>
+    </article>
+    <article class="showcase-card variant-nine__pane variant-nine__pane--two" data-hero-pane aria-hidden="true">
+      <div class="showcase-card__media">
+        <img src="assets/screenshots/cinematic_mcq.jpg" alt="" width="540" height="1200" loading="eager" decoding="async">
+      </div>
+    </article>
+    <article class="showcase-card variant-nine__pane variant-nine__pane--three" data-hero-pane aria-hidden="true">
+      <div class="showcase-card__media">
+        <img src="assets/screenshots/cinematic_spell.jpg" alt="" width="540" height="1200" loading="eager" decoding="async">
+      </div>
+    </article>
+    <article class="showcase-card variant-nine__pane variant-nine__pane--four" data-hero-pane aria-hidden="true">
+      <div class="showcase-card__media">
+        <img src="assets/screenshots/cinematic_word_order.jpg" alt="" width="540" height="1200" loading="eager" decoding="async">
+      </div>
+    </article>
+    <article class="showcase-card variant-nine__pane variant-nine__pane--five" data-hero-pane aria-hidden="true">
+      <div class="showcase-card__media">
+        <img src="assets/screenshots/cinematic_hotel.jpg" alt="" width="540" height="1200" loading="lazy" decoding="async">
+      </div>
+    </article>
+    <article class="showcase-card variant-nine__pane variant-nine__pane--six" data-hero-pane aria-hidden="true">
+      <div class="showcase-card__media">
+        <img src="assets/screenshots/cinematic_flowers.jpg" alt="" width="540" height="1200" loading="lazy" decoding="async">
+      </div>
+    </article>
+    <article class="showcase-card variant-nine__pane variant-nine__pane--back variant-nine__pane--seven" data-hero-pane aria-hidden="true">
+      <div class="showcase-card__media">
+        <img src="assets/screenshots/cinematic_interrogation.jpg" alt="" width="540" height="1200" loading="lazy" decoding="async">
+      </div>
+    </article>
+    <article class="showcase-card variant-nine__pane variant-nine__pane--back variant-nine__pane--eight" data-hero-pane aria-hidden="true">
+      <div class="showcase-card__media">
+        <img src="assets/screenshots/cinematic_gym.jpg" alt="" width="540" height="1200" loading="lazy" decoding="async">
+      </div>
+    </article>
+  </template>
+
   <main id="main-content">
     <section class="variant-nine__hero">
-      <div class="variant-nine__hero-stage">
+      <div class="variant-nine__hero-stage" data-hero-stage>
         <div class="variant-nine__orb"></div>
         <div class="variant-nine__orb variant-nine__orb--secondary"></div>
         <div class="variant-nine__vignette"></div>
 
-        <article class="showcase-card variant-nine__pane variant-nine__pane--one" aria-hidden="true">
-          <div class="showcase-card__media">
-            <img src="assets/screenshots/cinematic_hobbies.jpg" alt="" width="540" height="1200" loading="eager" decoding="async">
-          </div>
-        </article>
-        <article class="showcase-card variant-nine__pane variant-nine__pane--two" aria-hidden="true">
-          <div class="showcase-card__media">
-            <img src="assets/screenshots/cinematic_mcq.jpg" alt="" width="540" height="1200" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="showcase-card variant-nine__pane variant-nine__pane--three" aria-hidden="true">
-          <div class="showcase-card__media">
-            <img src="assets/screenshots/cinematic_spell.jpg" alt="" width="540" height="1200" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="showcase-card variant-nine__pane variant-nine__pane--four" aria-hidden="true">
-          <div class="showcase-card__media">
-            <img src="assets/screenshots/cinematic_word_order.jpg" alt="" width="540" height="1200" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="showcase-card variant-nine__pane variant-nine__pane--five" aria-hidden="true">
-          <div class="showcase-card__media">
-            <img src="assets/screenshots/cinematic_hotel.jpg" alt="" width="540" height="1200" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="showcase-card variant-nine__pane variant-nine__pane--six" aria-hidden="true">
-          <div class="showcase-card__media">
-            <img src="assets/screenshots/cinematic_flowers.jpg" alt="" width="540" height="1200" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="showcase-card variant-nine__pane variant-nine__pane--back variant-nine__pane--seven" aria-hidden="true">
-          <div class="showcase-card__media">
-            <img src="assets/screenshots/cinematic_interrogation.jpg" alt="" width="540" height="1200" loading="lazy" decoding="async">
-          </div>
-        </article>
-        <article class="showcase-card variant-nine__pane variant-nine__pane--back variant-nine__pane--eight" aria-hidden="true">
-          <div class="showcase-card__media">
-            <img src="assets/screenshots/cinematic_gym.jpg" alt="" width="540" height="1200" loading="lazy" decoding="async">
-          </div>
-        </article>
-
-        <div class="variant-nine__brand-lockup">
+        <div class="variant-nine__brand-lockup" data-hero-lockup>
           <img class="variant-nine__logo" src="assets/images/app-icon.png" alt="Saymo app icon" width="96" height="96">
           <div class="variant-nine__wordmark">Saymo</div>
           <p class="variant-nine__tag">Speak first, learn more</p>

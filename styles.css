@@ -391,6 +391,7 @@
   top: 50%;
   left: 50%;
   width: clamp(8.8rem, 30vw, 10.4rem);
+  transform: translate(-50%, -50%) rotate(var(--pane-rotate));
   overflow: hidden;
   border-radius: 38px;
   background:
@@ -494,25 +495,8 @@
   gap: 0.66rem;
   justify-items: center;
   text-align: center;
-  width: min(25.2rem, calc(100vw - 56px));
-  padding: 1.06rem 0.84rem;
-}
-
-.variant-nine__brand-lockup::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 30px;
-  background:
-    radial-gradient(circle at top, rgba(79, 127, 255, 0.12), transparent 52%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02)),
-    rgba(8, 11, 24, 0.34);
-  box-shadow:
-    0 24px 54px rgba(0, 0, 0, 0.24),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
+  width: min(22rem, calc(100vw - 56px));
+  padding: 0;
 }
 
 .variant-nine__logo {
@@ -831,9 +815,10 @@
 }
 
 .variant-nine .site-footer__content {
+  border-top: none;
   justify-items: center;
   gap: 0.55rem;
-  padding-top: 0.62rem;
+  padding-top: 0.28rem;
   text-align: center;
 }
 
@@ -875,6 +860,10 @@
     display: block;
   }
 
+  .variant-nine__pane {
+    animation: none;
+  }
+
   .variant-nine__hero,
   .variant-nine__hero-stage {
     min-height: calc(100svh - 7.9rem - env(safe-area-inset-bottom));
@@ -898,7 +887,7 @@
 
   .variant-nine .site-footer__content {
     gap: 0.48rem;
-    padding-top: 0.42rem;
+    padding-top: 0.18rem;
   }
 
   .variant-nine .footer-links {
@@ -1009,8 +998,25 @@
   }
 
   .variant-nine__brand-lockup {
-    width: min(29rem, calc(100vw - 96px));
+    width: min(22.5rem, calc(100vw - 96px));
     padding: 1.12rem 1.02rem;
+  }
+
+  .variant-nine__brand-lockup::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 30px;
+    background:
+      radial-gradient(circle at top, rgba(79, 127, 255, 0.12), transparent 52%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02)),
+      rgba(8, 11, 24, 0.34);
+    box-shadow:
+      0 24px 54px rgba(0, 0, 0, 0.24),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
   }
 
   .variant-nine main {
@@ -1126,7 +1132,7 @@
   }
 
   .variant-nine__brand-lockup {
-    width: 29.8rem;
+    width: 23rem;
     padding: 1.22rem 1.12rem;
   }
 

@@ -123,6 +123,7 @@
   initTrustLists();
   initPersonalizationLists();
   initFooter();
+  initDesktopHeroStack();
   initStoreRows();
   initTabs();
   initStickyDocks();
@@ -181,6 +182,35 @@
         </div>
       `;
     });
+  }
+
+  function initDesktopHeroStack() {
+    const stage = document.querySelector("[data-hero-stage]");
+    const lockup = document.querySelector("[data-hero-lockup]");
+    const template = document.getElementById("variant-nine-hero-stack-template");
+    const desktopMedia = window.matchMedia("(min-width: 720px)");
+
+    if (!stage || !lockup || !template) return;
+
+    const render = () => {
+      const panes = stage.querySelectorAll("[data-hero-pane]");
+
+      if (desktopMedia.matches) {
+        if (!panes.length) {
+          stage.insertBefore(template.content.cloneNode(true), lockup);
+        }
+        return;
+      }
+
+      panes.forEach((pane) => pane.remove());
+    };
+
+    render();
+    if (typeof desktopMedia.addEventListener === "function") {
+      desktopMedia.addEventListener("change", render);
+    } else if (typeof desktopMedia.addListener === "function") {
+      desktopMedia.addListener(render);
+    }
   }
 
   function initStoreRows() {
