@@ -347,12 +347,14 @@
   place-items: center;
   padding: 1.45rem clamp(0.9rem, 4vw, 3rem) 1.75rem;
   isolation: isolate;
+  z-index: 1;
 }
 
 .variant-nine__orb,
 .variant-nine__vignette {
   position: absolute;
   pointer-events: none;
+  display: none;
 }
 
 .variant-nine__orb {
@@ -865,6 +867,14 @@
 }
 
 @media (max-width: 520px) {
+  .variant-nine__ambient-orb {
+    display: none;
+  }
+
+  .variant-nine__ambient-orb--hero {
+    display: block;
+  }
+
   .variant-nine__hero,
   .variant-nine__hero-stage {
     min-height: calc(100svh - 7.9rem - env(safe-area-inset-bottom));
@@ -883,16 +893,17 @@
 
   .variant-nine .site-footer,
   .variant-nine__sticky-install.is-resting + .site-footer {
-    padding: 0 0 0.6rem;
+    padding: 0.16rem 0 calc(0.62rem + env(safe-area-inset-bottom));
   }
 
   .variant-nine .site-footer__content {
-    gap: 0.42rem;
-    padding-top: 0;
+    gap: 0.48rem;
+    padding-top: 0.42rem;
   }
 
   .variant-nine .footer-links {
-    margin-top: -0.16rem;
+    margin-top: 0;
+    gap: 0.5rem;
   }
 }
 
@@ -944,35 +955,37 @@
   }
 
   .variant-nine__hero-stage {
-    padding: 1.15rem clamp(1rem, 4vw, 3rem);
+    width: min(70rem, calc(100vw - 36px));
+    margin-inline: auto;
+    padding: 1.05rem clamp(1rem, 3.2vw, 2.5rem) 1.1rem;
   }
 
   .variant-nine__pane {
-    width: 12rem;
+    width: 11.35rem;
   }
 
   .variant-nine__pane--back {
-    width: 9.75rem;
+    width: 9rem;
   }
 
   .variant-nine__pane--one {
     top: 45%;
-    left: 35%;
+    left: 37%;
   }
 
   .variant-nine__pane--two {
     top: 45%;
-    left: 65%;
+    left: 63%;
   }
 
   .variant-nine__pane--three {
     top: 55%;
-    left: 35%;
+    left: 37%;
   }
 
   .variant-nine__pane--four {
     top: 55%;
-    left: 65%;
+    left: 63%;
   }
 
   .variant-nine__pane--five {
@@ -987,17 +1000,17 @@
 
   .variant-nine__pane--seven {
     top: 50%;
-    left: 27%;
+    left: 30%;
   }
 
   .variant-nine__pane--eight {
     top: 50%;
-    left: 73%;
+    left: 70%;
   }
 
   .variant-nine__brand-lockup {
-    width: min(30.6rem, calc(100vw - 96px));
-    padding: 1.18rem 1.08rem;
+    width: min(29rem, calc(100vw - 96px));
+    padding: 1.12rem 1.02rem;
   }
 
   .variant-nine main {
@@ -1060,35 +1073,36 @@
   }
 
   .variant-nine__hero-stage {
-    padding: 1.35rem clamp(1rem, 4vw, 3rem);
+    width: min(72rem, calc(100vw - 56px));
+    padding: 1.1rem clamp(1rem, 3vw, 2.5rem) 1.2rem;
   }
 
   .variant-nine__pane {
-    width: 14.2rem;
+    width: 12.9rem;
   }
 
   .variant-nine__pane--back {
-    width: 11.5rem;
+    width: 10.25rem;
   }
 
   .variant-nine__pane--one {
     top: 45%;
-    left: 37%;
+    left: 39%;
   }
 
   .variant-nine__pane--two {
     top: 45%;
-    left: 63%;
+    left: 61%;
   }
 
   .variant-nine__pane--three {
     top: 55%;
-    left: 37%;
+    left: 39%;
   }
 
   .variant-nine__pane--four {
     top: 55%;
-    left: 63%;
+    left: 61%;
   }
 
   .variant-nine__pane--five {
@@ -1103,17 +1117,17 @@
 
   .variant-nine__pane--seven {
     top: 50%;
-    left: 30%;
+    left: 32%;
   }
 
   .variant-nine__pane--eight {
     top: 50%;
-    left: 70%;
+    left: 68%;
   }
 
   .variant-nine__brand-lockup {
-    width: 31.5rem;
-    padding: 1.34rem 1.22rem;
+    width: 29.8rem;
+    padding: 1.22rem 1.12rem;
   }
 
   .variant-nine__sticky-shell {

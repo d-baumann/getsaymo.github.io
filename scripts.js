@@ -265,8 +265,6 @@
   }
 
   function initStickyDocks() {
-    if (!("IntersectionObserver" in window)) return;
-
     document.querySelectorAll("[data-sticky-dock]").forEach((dock) => {
       const stopSelector = dock.dataset.stickyStop;
       const stopTarget = stopSelector
@@ -274,32 +272,56 @@
         : document.querySelector("[data-sticky-stop]");
 
       if (!stopTarget) return;
+      let isResting = false;
+      let frame = 0;
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          const entry = entries[0];
-          dock.classList.toggle("is-resting", entry.isIntersecting);
-        },
-        {
-          threshold: 0.01,
-          rootMargin: "0px 0px -18% 0px",
-        },
-      );
+      const update = () => {
+        frame = 0;
 
-      observer.observe(stopTarget);
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 0;
+        const stopRect = stopTarget.getBoundingClientRect();
+        const dockRect = dock.getBoundingClientRect();
+        const dockHeight = dockRect.height || 96;
+
+        // Use separate hide/show thresholds so the dock does not flicker
+        // when the footer spacing changes near the final install block.
+        const hideThreshold = viewportHeight - dockHeight - 24;
+        const showThreshold = viewportHeight - 24;
+
+        if (!isResting && stopRect.top <= hideThreshold) {
+          isResting = true;
+          dock.classList.add("is-resting");
+        } else if (isResting && stopRect.top > showThreshold) {
+          isResting = false;
+          dock.classList.remove("is-resting");
+        }
+      };
+
+      const requestUpdate = () => {
+        if (frame) return;
+        frame = window.requestAnimationFrame(update);
+      };
+
+      update();
+      window.addEventListener("scroll", requestUpdate, { passive: true });
+      window.addEventListener("resize", requestUpdate);
     });
   }
 
   function initParallaxDecor() {
-    const nodes = Array.from(document.querySelectorAll("[data-parallax-speed]"));
-    if (!nodes.length) return;
+    const allNodes = Array.from(document.querySelectorAll("[data-parallax-speed]"));
+    if (!allNodes.length) return;
+
+    const mobileHeroOnly = window.matchMedia("(max-width: 520px)");
+    const heroNodes = allNodes.filter((node) => node.classList.contains("variant-nine__ambient-orb--hero"));
 
     let frame = 0;
 
     const update = () => {
       frame = 0;
       const scrollY = window.scrollY || window.pageYOffset || 0;
-      nodes.forEach((node) => {
+      const activeNodes = mobileHeroOnly.matches ? heroNodes : allNodes;
+      activeNodes.forEach((node) => {
         const speed = Number.parseFloat(node.dataset.parallaxSpeed || "0");
         const offset = Math.round(scrollY * speed * 1.4);
         node.style.setProperty("--parallax-y", `${offset}px`);
