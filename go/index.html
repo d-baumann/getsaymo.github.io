@@ -3,153 +3,232 @@
 <head>
   <meta charset="UTF-8" />
   <title>Redirecting...</title>
-  <!-- Prevent caching -->
   <meta http-equiv="Cache-Control" content="no-store" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <!-- Fallback for no-JS users -->
   <noscript>
     <meta http-equiv="refresh" content="0;url=https://linktr.ee/saymoapp" />
   </noscript>
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      text-align: center;
-      padding: 20px;
       margin: 0;
+      padding: 24px;
       background: #f5f5f5;
+      color: #555555;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      text-align: center;
     }
+
     .loading {
-      color: #555;
+      max-width: 40rem;
+      margin: 3rem auto;
       font-size: 16px;
+      line-height: 1.5;
+    }
+
+    a {
+      color: #174eaf;
     }
   </style>
   <script>
     (() => {
-      const ua = navigator.userAgent || navigator.vendor || window.opera;
-      const isRedditApp = /reddit/i.test(ua);
-      const isInAppBrowser = /FBAN|FBAV|Instagram|Twitter|Line|WeChat|TikTok/.test(ua);
-      
-      let platform = "Web";
-      let destination = "https://linktr.ee/saymoapp"; // Safe default
-      
-      // Enhanced iOS detection (handles Reddit app edge cases)
-      if ((/iPad|iPhone|iPod/.test(ua) || (isRedditApp && /iOS|iPhone|iPad/.test(ua))) && !window.MSStream) {
-        destination = "https://testflight.apple.com/join/qq2aUTXh";
-        platform = "iOS";
-      } 
-      // Android detection
-      else if (/android/i.test(ua)) {
-        destination = "https://play.google.com/store/apps/details?id=com.saymo.app";
-        platform = "Android";
-      }
-      
-      // Preserve UTM parameters from ad campaigns
-      const currentParams = new URLSearchParams(window.location.search).toString();
-      if (currentParams) {
-        const separator = destination.includes('?') ? '&' : '?';
-        destination += separator + currentParams;
-      }
-      
-      // Enhanced tracking data
+      const APP_STORE_URL = "https://apps.apple.com/us/app/saymo/id6746813879";
+      const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.saymo.app";
+      const SAFE_DEFAULT_URL = "https://linktr.ee/saymoapp";
+      const TRACK_URL = "https://getsaymo-redirectlog-bggkftcef2bmdsed.westeurope-01.azurewebsites.net/api/trackRedirect";
+      const PIXEL_URL = "https://getsaymo-redirectlog-bggkftcef2bmdsed.westeurope-01.azurewebsites.net/api/pixel";
+
+      const searchParams = new URLSearchParams(window.location.search);
+      const variant = sanitizeVariant(searchParams.get("variant"));
+      const requestedStore = normalizeStore(searchParams.get("store"));
+      const detection = detectPlatform();
+      const source = detectSource(detection.ua);
+      const destinationInfo = resolveDestination(requestedStore, detection.platform);
+      const destination = buildDestination(destinationInfo.url, searchParams);
+      const fallbackUrl = buildFallbackUrl(destinationInfo.url, searchParams, {
+        requestedStore,
+        variant,
+      });
+
+      updateFallbackLink(fallbackUrl);
+      updateLoadingCopy(destinationInfo.label);
+
       const trackingData = {
-        platform,
-        source: isRedditApp ? 'reddit_app' : (isInAppBrowser ? 'in_app_browser' : 'web_browser'),
-        userAgent: ua.substring(0, 200), // Truncate to avoid issues
-        referrer: document.referrer || 'direct',
-        timestamp: new Date().toISOString()
+        platform: detection.platformLabel,
+        requestedStore,
+        destinationStore: destinationInfo.store,
+        variant: variant || "none",
+        source,
+        userAgent: detection.ua.substring(0, 200),
+        referrer: document.referrer || "direct",
+        timestamp: new Date().toISOString(),
       };
-      
-      // Function to perform redirect
+
+      let redirectAttempted = false;
+      let trackingCompleted = false;
+
       const doRedirect = () => {
+        if (redirectAttempted) return;
+        redirectAttempted = true;
         window.location.replace(destination);
-        // Fallback for edge cases where replace doesn't work
         setTimeout(() => {
           window.location.href = destination;
         }, 100);
       };
-      
-      // Track with timeout to ensure redirect happens
-      let trackingCompleted = false;
-      let trackingMethod = 'none';
-      
+
       Promise.race([
-        // Primary tracking
-        fetch("https://getsaymo-redirectlog-bggkftcef2bmdsed.westeurope-01.azurewebsites.net/api/trackRedirect", {
+        fetch(TRACK_URL, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Cache-Control": "no-cache"
+            "Cache-Control": "no-cache",
           },
           cache: "no-store",
-          body: JSON.stringify(trackingData)
-        }).then(response => {
+          body: JSON.stringify(trackingData),
+        }).then((response) => {
           trackingCompleted = true;
-          trackingMethod = 'fetch_success';
-          console.log('Tracking successful:', response.status);
           return response;
-        }).catch(error => {
-          console.log('Fetch failed:', error);
-          trackingMethod = 'fetch_failed';
-          throw error;
         }),
-        // Timeout after 800ms max (increased for mobile)
-        new Promise(resolve => setTimeout(() => {
-          if (!trackingCompleted) {
-            trackingMethod = 'timeout';
-            console.log('Tracking timed out');
+        new Promise((resolve) => {
+          setTimeout(resolve, 800);
+        }),
+      ])
+        .catch(() => undefined)
+        .finally(() => {
+          if (!trackingCompleted && "sendBeacon" in navigator) {
+            try {
+              navigator.sendBeacon(TRACK_URL, JSON.stringify({ ...trackingData, method: "beacon" }));
+            } catch (error) {
+            }
           }
-          resolve();
-        }, 800))
-      ]).finally(() => {
-        // Try beacon API as last resort for mobile
-        if (!trackingCompleted && 'sendBeacon' in navigator) {
-          try {
-            navigator.sendBeacon(
-              "https://getsaymo-redirectlog-bggkftcef2bmdsed.westeurope-01.azurewebsites.net/api/trackRedirect",
-              JSON.stringify({...trackingData, method: 'beacon'})
-            );
-            console.log('Beacon sent');
-          } catch (e) {
-            console.log('Beacon failed:', e);
-          }
-        }
-        doRedirect();
-      });
-      
-      // Backup pixel tracking (fire separately, don't wait for it)
+          doRedirect();
+        });
+
       try {
-        const img = new Image();
-        img.src = `https://getsaymo-redirectlog-bggkftcef2bmdsed.westeurope-01.azurewebsites.net/api/pixel?p=${encodeURIComponent(platform)}&s=${encodeURIComponent(trackingData.source)}&t=${Date.now()}`;
-      } catch (e) {}
-      
-      // Safety net - redirect after 1 second no matter what
-      setTimeout(() => {
-        doRedirect();
-      }, 1000);
+        const pixel = new Image();
+        pixel.src =
+          `${PIXEL_URL}?p=${encodeURIComponent(destinationInfo.store)}` +
+          `&s=${encodeURIComponent(source)}` +
+          `&v=${encodeURIComponent(variant || "none")}` +
+          `&t=${Date.now()}`;
+      } catch (error) {
+      }
+
+      setTimeout(doRedirect, 1000);
+
+      function resolveDestination(store, detectedPlatform) {
+        if (store === "ios") {
+          return { url: APP_STORE_URL, store: "ios", label: "App Store" };
+        }
+        if (store === "android") {
+          return { url: PLAY_STORE_URL, store: "android", label: "Google Play" };
+        }
+        if (detectedPlatform === "ios") {
+          return { url: APP_STORE_URL, store: "ios", label: "App Store" };
+        }
+        if (detectedPlatform === "android") {
+          return { url: PLAY_STORE_URL, store: "android", label: "Google Play" };
+        }
+        return { url: SAFE_DEFAULT_URL, store: "web", label: "link hub" };
+      }
+
+      function buildDestination(baseUrl, params) {
+        const url = new URL(baseUrl);
+        const forwarded = new URLSearchParams();
+
+        params.forEach((value, key) => {
+          if (key === "store" || key === "variant") return;
+          forwarded.append(key, value);
+        });
+
+        forwarded.forEach((value, key) => {
+          url.searchParams.append(key, value);
+        });
+
+        return url.toString();
+      }
+
+      function buildFallbackUrl(baseUrl, params, options) {
+        const url = new URL(baseUrl);
+        const forwarded = new URLSearchParams(url.search);
+
+        params.forEach((value, key) => {
+          if (key === "store" || key === "variant") return;
+          if (!forwarded.has(key)) {
+            forwarded.append(key, value);
+          }
+        });
+
+        if (options.variant) {
+          forwarded.set("variant", options.variant);
+        }
+
+        if (options.requestedStore !== "auto") {
+          forwarded.set("store", options.requestedStore);
+        }
+
+        url.search = forwarded.toString();
+        return url.toString();
+      }
+
+      function updateFallbackLink(url) {
+        const link = document.getElementById("fallback-link");
+        if (link) {
+          link.href = url;
+        }
+      }
+
+      function updateLoadingCopy(destinationLabel) {
+        const label = document.getElementById("destination-label");
+        if (label) {
+          label.textContent = destinationLabel;
+        }
+      }
+
+      function normalizeStore(value) {
+        if (!value) return "auto";
+        const normalized = value.toLowerCase();
+        return normalized === "ios" || normalized === "android" ? normalized : "auto";
+      }
+
+      function sanitizeVariant(value) {
+        if (!value) return "";
+        return value.replace(/[^a-z0-9-]/gi, "").slice(0, 80);
+      }
+
+      function detectPlatform() {
+        const ua = navigator.userAgent || navigator.vendor || window.opera || "";
+        const normalized = ua.toLowerCase();
+        const isRedditApp = /reddit/i.test(normalized);
+        const isIos =
+          (/ipad|iphone|ipod/.test(normalized) || (isRedditApp && /ios|iphone|ipad/.test(normalized))) &&
+          !window.MSStream;
+
+        if (isIos) {
+          return { platform: "ios", platformLabel: "iOS", ua };
+        }
+        if (/android/.test(normalized)) {
+          return { platform: "android", platformLabel: "Android", ua };
+        }
+        return { platform: "web", platformLabel: "Web", ua };
+      }
+
+      function detectSource(ua) {
+        if (/reddit/i.test(ua)) return "reddit_app";
+        if (/FBAN|FBAV|Instagram|Twitter|Line|WeChat|TikTok/i.test(ua)) return "in_app_browser";
+        return "web_browser";
+      }
     })();
   </script>
 </head>
 <body>
   <div class="loading">
-    <p>Redirecting...</p>
-    <p><small>If you're not redirected automatically, <a href="https://linktr.ee/saymoapp" id="fallback-link">click here</a>.</small></p>
+    <p>Redirecting to <span id="destination-label">the store</span>...</p>
+    <p>
+      <small>
+        If nothing happens, <a href="https://linktr.ee/saymoapp" id="fallback-link">continue here</a>.
+      </small>
+    </p>
   </div>
-  
-  <script>
-    // Update fallback link based on platform detection
-    setTimeout(() => {
-      const ua = navigator.userAgent || navigator.vendor || window.opera;
-      let fallbackUrl = "https://linktr.ee/saymoapp";
-      
-      if ((/iPad|iPhone|iPod/.test(ua) || /iOS|iPhone|iPad/.test(ua)) && !window.MSStream) {
-        fallbackUrl = "https://testflight.apple.com/join/qq2aUTXh";
-      } else if (/android/i.test(ua)) {
-        fallbackUrl = "https://play.google.com/store/apps/details?id=com.saymo.app";
-      }
-      
-      document.getElementById('fallback-link').href = fallbackUrl;
-    }, 50);
-  </script>
 </body>
 </html>

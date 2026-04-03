@@ -3,199 +3,318 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saymo - Learn German by Speaking</title>
-  <meta name="description" content="Learn German by speaking. Immersive conversations, no account needed, subscription optional.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .container {
-      max-width: 600px;
-      width: 100%;
-    }
-
-    .logo {
-      width: 100px;
-      height: 100px;
-      margin-bottom: 10px;
-      border-radius: 20px;
-      object-fit: cover;
-    }
-
-    h1 {
-      font-size: 48px;
-      font-weight: 800;
-      margin-bottom: 10px;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .tagline {
-      font-size: 22px;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 30px;
-      font-weight: 600;
-    }
-
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 40px;
-    }
-
-    .feature {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 12px;
-      padding: 20px;
-      width: 160px;
-      backdrop-filter: blur(10px);
-    }
-
-    .feature-icon {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .feature-text {
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.9);
-      font-weight: 600;
-    }
-
-    .store-badges {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      margin-top: 20px;
-    }
-
-    .store-badges a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 6px 10px;
-      border-radius: 12px;
-      outline: none;
-    }
-
-    .store-badge {
-      height: 50px;
-      opacity: 0.9;
-      transition: opacity 0.2s;
-    }
-
-    .store-badge.google-play {
-      height: 74px;
-    }
-
-    .store-badge:hover {
-      opacity: 1;
-    }
-
-    footer {
-      margin-top: 60px;
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 14px;
-    }
-
-    footer a {
-      color: rgba(255, 255, 255, 0.7);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      color: white;
-    }
-
-    a:focus-visible {
-      outline: 3px solid rgba(242, 201, 76, 0.85);
-      outline-offset: 3px;
-      border-radius: 12px;
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 36px;
-      }
-
-      .tagline {
-        font-size: 18px;
-      }
-
-      .feature {
-        width: 140px;
-        padding: 15px;
-      }
-    }
-  </style>
+  <meta name="theme-color" content="#080b17">
+  <title>Saymo | Learn German by Speaking</title>
+  <meta name="description" content="Practice useful German speaking scenarios, exam prep, and grammar games with Saymo. Free to use, no sign-up required.">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <div class="container">
-    <img src="adaptive-icon.png" alt="Saymo" class="logo">
-    <h1>Saymo</h1>
-    <p class="tagline">Learn German by Speaking</p>
+<body class="alt-page variant-nine" data-variant="home-prism-night">
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
-    <div class="features">
-      <div class="feature">
-        <div class="feature-icon">🎭</div>
-        <div class="feature-text">Immersive Conversations</div>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">📣</div>
-        <div class="feature-text">Learn by Speaking</div>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">📈</div>
-        <div class="feature-text">Track Progress</div>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">🚀</div>
-        <div class="feature-text">No Account Needed</div>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">💎</div>
-        <div class="feature-text">Subscription Optional</div>
-      </div>
-    </div>
+  <div class="variant-nine__ambient" aria-hidden="true">
+    <div class="variant-nine__ambient-orb variant-nine__ambient-orb--one" data-parallax-speed="-0.05"></div>
+    <div class="variant-nine__ambient-orb variant-nine__ambient-orb--two" data-parallax-speed="-0.22"></div>
+    <div class="variant-nine__ambient-orb variant-nine__ambient-orb--three" data-parallax-speed="-0.09"></div>
+    <div class="variant-nine__ambient-orb variant-nine__ambient-orb--four" data-parallax-speed="-0.33"></div>
+    <div class="variant-nine__ambient-orb variant-nine__ambient-orb--five" data-parallax-speed="-0.12"></div>
+    <div class="variant-nine__ambient-orb variant-nine__ambient-orb--six" data-parallax-speed="-0.28"></div>
+    <div class="variant-nine__ambient-orb variant-nine__ambient-orb--seven" data-parallax-speed="-0.18"></div>
+    <div class="variant-nine__ambient-orb variant-nine__ambient-orb--eight" data-parallax-speed="-0.42"></div>
+    <div class="variant-nine__ambient-orb variant-nine__ambient-orb--nine" data-parallax-speed="-0.56"></div>
+    <div class="variant-nine__ambient-orb variant-nine__ambient-orb--ten" data-parallax-speed="-0.68"></div>
+    <div class="variant-nine__ambient-orb variant-nine__ambient-orb--eleven" data-parallax-speed="-0.07"></div>
+    <div class="variant-nine__ambient-orb variant-nine__ambient-orb--twelve" data-parallax-speed="-0.25"></div>
+    <div class="variant-nine__ambient-orb variant-nine__ambient-orb--thirteen" data-parallax-speed="-0.15"></div>
+    <div class="variant-nine__ambient-orb variant-nine__ambient-orb--fourteen" data-parallax-speed="-0.39"></div>
+    <div class="variant-nine__ambient-orb variant-nine__ambient-orb--fifteen" data-parallax-speed="-0.52"></div>
+    <div class="variant-nine__ambient-orb variant-nine__ambient-orb--sixteen" data-parallax-speed="-0.11"></div>
+    <div class="variant-nine__ambient-orb variant-nine__ambient-orb--seventeen" data-parallax-speed="-0.31"></div>
+    <div class="variant-nine__ambient-orb variant-nine__ambient-orb--eighteen" data-parallax-speed="-0.61"></div>
+    <div class="variant-nine__ambient-orb variant-nine__ambient-orb--nineteen" data-parallax-speed="-0.46"></div>
+    <div class="variant-nine__ambient-orb variant-nine__ambient-orb--twenty" data-parallax-speed="-0.74"></div>
+    <div class="variant-nine__ambient-orb" data-parallax-speed="-0.04" style="--orb-size: 0.48rem; --orb-blur: 4px; --orb-opacity: 1; top: 14%; left: 28%; animation-delay: -3.1s; background: radial-gradient(circle, rgba(255, 242, 216, 1) 0%, rgba(255, 194, 145, 1) 44%, rgba(255, 123, 91, 0.5) 82%, transparent 100%);"></div>
+    <div class="variant-nine__ambient-orb" data-parallax-speed="-0.96" style="--orb-size: 0.7rem; --orb-blur: 5px; --orb-opacity: 1; top: 22%; left: 74%; animation-delay: -8.3s; background: radial-gradient(circle, rgba(255, 238, 206, 1) 0%, rgba(255, 184, 130, 1) 42%, rgba(255, 123, 91, 0.52) 82%, transparent 100%);"></div>
+    <div class="variant-nine__ambient-orb" data-parallax-speed="-0.06" style="--orb-size: 2.9rem; --orb-blur: 12px; --orb-opacity: 0.96; top: 28%; left: 48%; animation-delay: -5.8s;"></div>
+    <div class="variant-nine__ambient-orb" data-parallax-speed="-0.82" style="--orb-size: 0.56rem; --orb-blur: 4px; --orb-opacity: 1; top: 34%; right: 18%; animation-delay: -9.1s; background: radial-gradient(circle, rgba(255, 243, 221, 1) 0%, rgba(255, 193, 142, 1) 46%, rgba(255, 123, 91, 0.54) 84%, transparent 100%);"></div>
+    <div class="variant-nine__ambient-orb" data-parallax-speed="-0.14" style="--orb-size: 5.8rem; --orb-blur: 19px; --orb-opacity: 0.86; top: 38%; left: 82%; animation-delay: -6.4s;"></div>
+    <div class="variant-nine__ambient-orb" data-parallax-speed="-0.58" style="--orb-size: 1.05rem; --orb-blur: 6px; --orb-opacity: 1; top: 46%; left: 30%; animation-delay: -11.6s; background: radial-gradient(circle, rgba(255, 238, 206, 1) 0%, rgba(255, 184, 130, 1) 42%, rgba(255, 123, 91, 0.5) 80%, transparent 100%);"></div>
+    <div class="variant-nine__ambient-orb" data-parallax-speed="-0.09" style="--orb-size: 4.1rem; --orb-blur: 14px; --orb-opacity: 0.9; top: 62%; left: 40%; animation-delay: -7.2s;"></div>
+    <div class="variant-nine__ambient-orb" data-parallax-speed="-1.02" style="--orb-size: 0.42rem; --orb-blur: 3px; --orb-opacity: 1; top: 74%; left: 62%; animation-delay: -14.4s; background: radial-gradient(circle, rgba(255, 247, 230, 1) 0%, rgba(255, 201, 154, 1) 48%, rgba(255, 123, 91, 0.58) 86%, transparent 100%);"></div>
+    <div class="variant-nine__ambient-orb" data-parallax-speed="-0.16" style="--orb-size: 6.2rem; --orb-blur: 20px; --orb-opacity: 0.84; top: 88%; left: 52%; animation-delay: -4.6s;"></div>
+    <div class="variant-nine__ambient-orb" data-parallax-speed="-0.72" style="--orb-size: 0.9rem; --orb-blur: 5px; --orb-opacity: 1; top: 98%; right: 22%; animation-delay: -12.7s; background: radial-gradient(circle, rgba(255, 240, 212, 1) 0%, rgba(255, 188, 136, 1) 44%, rgba(255, 123, 91, 0.52) 84%, transparent 100%);"></div>
+    <div class="variant-nine__ambient-orb" data-parallax-speed="-0.05" style="--orb-size: 3.4rem; --orb-blur: 13px; --orb-opacity: 0.94; top: 116%; left: 72%; animation-delay: -9.9s;"></div>
+    <div class="variant-nine__ambient-orb" data-parallax-speed="-1.1" style="--orb-size: 0.5rem; --orb-blur: 4px; --orb-opacity: 1; top: 126%; left: 12%; animation-delay: -16.1s; background: radial-gradient(circle, rgba(255, 247, 230, 1) 0%, rgba(255, 201, 154, 1) 50%, rgba(255, 123, 91, 0.58) 88%, transparent 100%);"></div>
+    <div class="variant-nine__ambient-orb" data-parallax-speed="-0.11" style="--orb-size: 5rem; --orb-blur: 17px; --orb-opacity: 0.88; top: 134%; right: 8%; animation-delay: -6.9s;"></div>
+    <div class="variant-nine__ambient-orb" data-parallax-speed="-0.86" style="--orb-size: 0.78rem; --orb-blur: 5px; --orb-opacity: 1; top: 142%; left: 36%; animation-delay: -13.8s; background: radial-gradient(circle, rgba(255, 243, 221, 1) 0%, rgba(255, 193, 142, 1) 46%, rgba(255, 123, 91, 0.54) 84%, transparent 100%);"></div>
+    <div class="variant-nine__ambient-orb" data-parallax-speed="-0.07" style="--orb-size: 2.2rem; --orb-blur: 10px; --orb-opacity: 0.96; top: 154%; left: 60%; animation-delay: -10.2s;"></div>
+    <div class="variant-nine__ambient-orb" data-parallax-speed="-1.22" style="--orb-size: 0.38rem; --orb-blur: 3px; --orb-opacity: 1; top: 162%; right: 16%; animation-delay: -17.8s; background: radial-gradient(circle, rgba(255, 250, 236, 1) 0%, rgba(255, 207, 162, 1) 52%, rgba(255, 123, 91, 0.62) 90%, transparent 100%);"></div>
+    <div class="variant-nine__ambient-orb" data-parallax-speed="-0.13" style="--orb-size: 6.6rem; --orb-blur: 21px; --orb-opacity: 0.82; top: 171%; left: 4%; animation-delay: -8.6s;"></div>
+    <div class="variant-nine__ambient-orb" data-parallax-speed="-0.94" style="--orb-size: 0.62rem; --orb-blur: 4px; --orb-opacity: 1; top: 179%; left: 82%; animation-delay: -15.4s; background: radial-gradient(circle, rgba(255, 247, 230, 1) 0%, rgba(255, 201, 154, 1) 48%, rgba(255, 123, 91, 0.58) 86%, transparent 100%);"></div>
+    <div class="variant-nine__ambient-orb" data-parallax-speed="-0.08" style="--orb-size: 3rem; --orb-blur: 12px; --orb-opacity: 0.92; top: 188%; left: 26%; animation-delay: -12.3s;"></div>
+    <div class="variant-nine__ambient-orb" data-parallax-speed="-1.32" style="--orb-size: 0.34rem; --orb-blur: 3px; --orb-opacity: 1; top: 196%; left: 54%; animation-delay: -19.2s; background: radial-gradient(circle, rgba(255, 252, 240, 1) 0%, rgba(255, 211, 168, 1) 54%, rgba(255, 123, 91, 0.64) 92%, transparent 100%);"></div>
+  </div>
 
-    <div class="store-badges">
-      <a href="https://play.google.com/store/apps/details?id=com.saymo.app" target="_blank" rel="noopener noreferrer">
-        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" class="store-badge google-play" loading="lazy">
-      </a>
-      <a href="https://apps.apple.com/app/saymo/id6746813879" target="_blank" rel="noopener noreferrer">
-        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="store-badge" loading="lazy">
-      </a>
+  <main id="main-content">
+    <section class="variant-nine__hero">
+      <div class="variant-nine__hero-stage">
+        <div class="variant-nine__orb"></div>
+        <div class="variant-nine__orb variant-nine__orb--secondary"></div>
+        <div class="variant-nine__vignette"></div>
+
+        <article class="showcase-card variant-nine__pane variant-nine__pane--one" aria-hidden="true">
+          <div class="showcase-card__media">
+            <img src="assets/screenshots/cinematic_hobbies.jpg" alt="" width="540" height="1200" loading="eager" decoding="async">
+          </div>
+        </article>
+        <article class="showcase-card variant-nine__pane variant-nine__pane--two" aria-hidden="true">
+          <div class="showcase-card__media">
+            <img src="assets/screenshots/cinematic_mcq.jpg" alt="" width="540" height="1200" loading="lazy" decoding="async">
+          </div>
+        </article>
+        <article class="showcase-card variant-nine__pane variant-nine__pane--three" aria-hidden="true">
+          <div class="showcase-card__media">
+            <img src="assets/screenshots/cinematic_spell.jpg" alt="" width="540" height="1200" loading="lazy" decoding="async">
+          </div>
+        </article>
+        <article class="showcase-card variant-nine__pane variant-nine__pane--four" aria-hidden="true">
+          <div class="showcase-card__media">
+            <img src="assets/screenshots/cinematic_word_order.jpg" alt="" width="540" height="1200" loading="lazy" decoding="async">
+          </div>
+        </article>
+        <article class="showcase-card variant-nine__pane variant-nine__pane--five" aria-hidden="true">
+          <div class="showcase-card__media">
+            <img src="assets/screenshots/cinematic_hotel.jpg" alt="" width="540" height="1200" loading="lazy" decoding="async">
+          </div>
+        </article>
+        <article class="showcase-card variant-nine__pane variant-nine__pane--six" aria-hidden="true">
+          <div class="showcase-card__media">
+            <img src="assets/screenshots/cinematic_flowers.jpg" alt="" width="540" height="1200" loading="lazy" decoding="async">
+          </div>
+        </article>
+        <article class="showcase-card variant-nine__pane variant-nine__pane--back variant-nine__pane--seven" aria-hidden="true">
+          <div class="showcase-card__media">
+            <img src="assets/screenshots/cinematic_interrogation.jpg" alt="" width="540" height="1200" loading="lazy" decoding="async">
+          </div>
+        </article>
+        <article class="showcase-card variant-nine__pane variant-nine__pane--back variant-nine__pane--eight" aria-hidden="true">
+          <div class="showcase-card__media">
+            <img src="assets/screenshots/cinematic_gym.jpg" alt="" width="540" height="1200" loading="lazy" decoding="async">
+          </div>
+        </article>
+
+        <div class="variant-nine__brand-lockup">
+          <img class="variant-nine__logo" src="assets/images/app-icon.png" alt="Saymo app icon" width="96" height="96">
+          <div class="variant-nine__wordmark">Saymo</div>
+          <p class="variant-nine__tag">Speak first, learn more</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-shell section variant-nine__section variant-nine__section--immersive">
+      <div class="section-head">
+        <span class="eyebrow">Immersive Learning</span>
+        <h2>Practice useful scenarios</h2>
+      </div>
+
+      <div class="variant-nine__rail" aria-label="Immersive learning screenshots">
+        <article class="variant-nine__rail-card card">
+          <div class="variant-nine__rail-media">
+            <img src="assets/screenshots/cinematic_mic.jpg" alt="Saymo cinematic speaking screen with a microphone button and dialogue prompt." width="540" height="1200" loading="lazy" decoding="async">
+          </div>
+          <div class="variant-nine__rail-body">
+            <h3>Say it out loud</h3>
+            <p>Practice useful speaking in realistic situations</p>
+          </div>
+        </article>
+
+        <article class="variant-nine__rail-card card">
+          <div class="variant-nine__rail-media">
+            <img src="assets/screenshots/cinematic_recruiter.jpg" alt="Saymo cinematic scene for arranging sentence structure in a recruiter conversation." width="540" height="1200" loading="lazy" decoding="async">
+          </div>
+          <div class="variant-nine__rail-body">
+            <h3>Make structure feel natural</h3>
+            <p>Practice sentence shape until it clicks.</p>
+          </div>
+        </article>
+
+        <article class="variant-nine__rail-card card">
+          <div class="variant-nine__rail-media">
+            <img src="assets/screenshots/cinematic_rental.jpg" alt="Saymo cinematic scene for catching a missed word in a rental scenario." width="540" height="1200" loading="lazy" decoding="async">
+          </div>
+          <div class="variant-nine__rail-body">
+            <h3>Spell it right</h3>
+            <p>Practice forms in context</p>
+          </div>
+        </article>
+
+        <article class="variant-nine__rail-card card">
+          <div class="variant-nine__rail-media">
+            <img src="assets/screenshots/cinematic_hike.jpg" alt="Saymo cinematic scene for choosing the right response in a hiking scenario." width="540" height="1200" loading="lazy" decoding="async">
+          </div>
+          <div class="variant-nine__rail-body">
+            <h3>Choose what fits</h3>
+            <p>Target weak forms in context</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-shell section variant-nine__section variant-nine__section--exam">
+      <div class="section-head">
+        <span class="eyebrow">Exam Preparation</span>
+        <h2>The perfect preparation loop</h2>
+      </div>
+
+      <div class="variant-nine__rail" aria-label="Exam preparation screenshots">
+        <article class="variant-nine__rail-card card">
+          <div class="variant-nine__rail-media">
+            <img src="assets/screenshots/exam_prep_1.jpg" alt="Saymo exam preparation topic configuration screen." width="540" height="1200" loading="lazy" decoding="async">
+          </div>
+          <div class="variant-nine__rail-body">
+            <h3>Set your focus</h3>
+            <p>Choose your topics or keep it random</p>
+          </div>
+        </article>
+
+        <article class="variant-nine__rail-card card">
+          <div class="variant-nine__rail-media">
+            <img src="assets/screenshots/exam_prep_2.jpg" alt="Saymo exam speaking practice screen with a speaking prompt." width="540" height="1200" loading="lazy" decoding="async">
+          </div>
+          <div class="variant-nine__rail-body">
+            <h3>Difficulty that adapts</h3>
+            <p>Stay challenged without getting derailed.</p>
+          </div>
+        </article>
+
+        <article class="variant-nine__rail-card card">
+          <div class="variant-nine__rail-media">
+            <img src="assets/screenshots/exam_prep_3.jpg" alt="Saymo exam preparation feedback screen showing progress details." width="540" height="1200" loading="lazy" decoding="async">
+          </div>
+          <div class="variant-nine__rail-body">
+            <h3>Understand your progress</h3>
+            <p>See what needs improvement</p>
+          </div>
+        </article>
+
+        <article class="variant-nine__rail-card card">
+          <div class="variant-nine__rail-media">
+            <img src="assets/screenshots/exam_prep_4.jpg" alt="Saymo exam preparation analysis screen showing strengths and weaknesses." width="540" height="1200" loading="lazy" decoding="async">
+          </div>
+          <div class="variant-nine__rail-body">
+            <h3>Practice with direction</h3>
+            <p>Tasks automatically adapt to weak spots</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-shell section variant-nine__section variant-nine__section--grammar">
+      <div class="section-head">
+        <span class="eyebrow">Grammar Games</span>
+        <h2>Make grammar feel natural</h2>
+      </div>
+
+      <div class="variant-nine__rail" aria-label="Grammar games screenshots">
+        <article class="variant-nine__rail-card card">
+          <div class="variant-nine__rail-media">
+            <img src="assets/screenshots/grammar_cases_1.jpg" alt="Saymo grammar game for choosing the correct German case." width="540" height="1200" loading="lazy" decoding="async">
+          </div>
+          <div class="variant-nine__rail-body">
+            <h3>Master the cases</h3>
+            <p>Learn which case fits which situation.</p>
+          </div>
+        </article>
+
+        <article class="variant-nine__rail-card card">
+          <div class="variant-nine__rail-media">
+            <img src="assets/screenshots/grammar_cases_2.jpg" alt="Saymo grammar feedback screen highlighting case mistakes." width="540" height="1200" loading="lazy" decoding="async">
+          </div>
+          <div class="variant-nine__rail-body">
+            <h3>See what needs work</h3>
+            <p>Spot the situations that still need practice</p>
+          </div>
+        </article>
+
+        <article class="variant-nine__rail-card card">
+          <div class="variant-nine__rail-media">
+            <img src="assets/screenshots/grammar_endings_1.jpg" alt="Saymo grammar endings practice screen." width="540" height="1200" loading="lazy" decoding="async">
+          </div>
+          <div class="variant-nine__rail-body">
+            <h3>Repeat until it clicks</h3>
+            <p>Practice endings across every case pattern.</p>
+          </div>
+        </article>
+
+        <article class="variant-nine__rail-card card">
+          <div class="variant-nine__rail-media">
+            <img src="assets/screenshots/grammar_endings_2.jpg" alt="Saymo grammar endings feedback screen showing weak areas." width="540" height="1200" loading="lazy" decoding="async">
+          </div>
+          <div class="variant-nine__rail-body">
+            <h3>Practice with precision</h3>
+            <p>Weak patterns are automatically brought back</p>
+          </div>
+        </article>
+
+        <article class="variant-nine__rail-card card">
+          <div class="variant-nine__rail-media">
+            <img src="assets/screenshots/grammar_articles.jpg" alt="Saymo grammar game for learning German articles." width="540" height="1200" loading="lazy" decoding="async">
+          </div>
+          <div class="variant-nine__rail-body">
+            <h3>Get articles right</h3>
+            <p>Learn articles quickly through play</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="prism-install" class="page-shell section variant-nine__desktop-install" data-sticky-stop>
+      <div class="variant-nine__final card">
+        <div class="variant-nine__final-copy">
+          <span class="eyebrow">Free to use. No sign-up.</span>
+          <h2>Download Saymo</h2>
+        </div>
+
+        <div class="variant-nine__store-row variant-nine__store-row--desktop" data-store-row data-sort="false">
+          <a class="variant-nine__store-button" data-store="ios" href="go/?variant=home-prism-night&store=ios" aria-label="Download Saymo on the App Store">
+            <img class="variant-nine__store-badge variant-nine__store-badge--apple" src="assets/images/app-store-badge.svg" alt="Download on the App Store" width="120" height="40" loading="lazy" decoding="async">
+          </a>
+
+          <a class="variant-nine__store-button" data-store="android" href="go/?variant=home-prism-night&store=android" aria-label="Get Saymo on Google Play">
+            <img class="variant-nine__store-badge variant-nine__store-badge--google" src="assets/images/google-play-badge.png" alt="Get it on Google Play" width="564" height="168" loading="lazy" decoding="async">
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="variant-nine__sticky-install" aria-label="Install Saymo" data-sticky-dock data-sticky-stop="#prism-install">
+    <div class="variant-nine__sticky-shell">
+      <p class="variant-nine__sticky-trust">Free to use. No sign-up.</p>
+      <div class="variant-nine__store-row variant-nine__store-row--sticky" data-store-row data-sort="false">
+        <a class="variant-nine__store-button" data-store="ios" href="go/?variant=home-prism-night&store=ios" aria-label="Download Saymo on the App Store">
+          <img class="variant-nine__store-badge variant-nine__store-badge--apple" src="assets/images/app-store-badge.svg" alt="Download on the App Store" width="120" height="40" loading="lazy" decoding="async">
+        </a>
+
+        <a class="variant-nine__store-button" data-store="android" href="go/?variant=home-prism-night&store=android" aria-label="Get Saymo on Google Play">
+          <img class="variant-nine__store-badge variant-nine__store-badge--google" src="assets/images/google-play-badge.png" alt="Get it on Google Play" width="564" height="168" loading="lazy" decoding="async">
+        </a>
+      </div>
     </div>
   </div>
 
-  <footer>
-    <p>
-      © 2025 Saymo ·
-      <a href="/support.html">Support</a> ·
-      <a href="https://docs.google.com/document/d/1JDI0zqQew5qYf_onqMew_70GPoFYibCCjEwSgM_9ulU/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Privacy Policy</a> ·
-      <a href="https://docs.google.com/document/d/1AUX1rOXEYunQipf7cHtrGqblBVgvk0-PMkSgguSnfoc/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Terms of Use (EULA)</a>
-    </p>
+  <footer class="site-footer">
+    <div class="page-shell">
+      <div class="site-footer__content">
+        <div class="footer-links">
+          <a href="support.html">Support</a>
+          <a href="https://docs.google.com/document/d/1JDI0zqQew5qYf_onqMew_70GPoFYibCCjEwSgM_9ulU/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+          <a href="https://docs.google.com/document/d/1AUX1rOXEYunQipf7cHtrGqblBVgvk0-PMkSgguSnfoc/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Terms of Use (EULA)</a>
+        </div>
+      </div>
+    </div>
   </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
