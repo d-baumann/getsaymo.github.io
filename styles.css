@@ -599,7 +599,7 @@
 .variant-nine__rail {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(17.5rem, 78vw);
+  grid-auto-columns: 17.5rem;
   gap: 1rem;
   overflow-x: auto;
   padding-inline: 0.08rem;
@@ -688,6 +688,10 @@
 @media (max-width: 719px) {
   .variant-nine .page-shell {
     width: min(1120px, calc(100vw - 36px));
+  }
+
+  .variant-nine__rail {
+    grid-auto-columns: 17.5rem;
   }
 
   .variant-nine__hero,
@@ -1075,7 +1079,7 @@
   }
 
   .variant-nine__rail {
-    grid-auto-columns: minmax(20rem, 31rem);
+    grid-auto-columns: 17.5rem;
   }
 }
 
@@ -1151,7 +1155,7 @@
   }
 
   .variant-nine__rail {
-    grid-auto-columns: 23rem;
+    grid-auto-columns: 17.5rem;
   }
 
   .variant-nine__final {
