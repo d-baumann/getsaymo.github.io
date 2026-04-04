@@ -400,7 +400,6 @@
   box-shadow:
     0 22px 54px rgba(0, 0, 0, 0.36),
     0 0 0 1px rgba(255, 255, 255, 0.05);
-  animation: prismFloat 8s ease-in-out infinite;
   z-index: 1;
 }
 
@@ -962,51 +961,35 @@
   }
 
   .variant-nine__pane {
-    width: 11.35rem;
+    width: 11.2rem;
   }
 
   .variant-nine__pane--back {
-    width: 9rem;
+    width: 8.85rem;
   }
 
   .variant-nine__pane--one {
-    top: 45%;
-    left: 37%;
+    left: 38%;
   }
 
   .variant-nine__pane--two {
-    top: 45%;
-    left: 63%;
+    left: 62%;
   }
 
   .variant-nine__pane--three {
-    top: 55%;
-    left: 37%;
+    left: 38%;
   }
 
   .variant-nine__pane--four {
-    top: 55%;
-    left: 63%;
-  }
-
-  .variant-nine__pane--five {
-    top: 40.5%;
-    left: 50%;
-  }
-
-  .variant-nine__pane--six {
-    top: 59.5%;
-    left: 50%;
+    left: 62%;
   }
 
   .variant-nine__pane--seven {
-    top: 50%;
-    left: 30%;
+    left: 31%;
   }
 
   .variant-nine__pane--eight {
-    top: 50%;
-    left: 70%;
+    left: 69%;
   }
 
   .variant-nine__brand-lockup {
@@ -1096,51 +1079,35 @@
   }
 
   .variant-nine__pane {
-    width: 12.9rem;
+    width: 12.35rem;
   }
 
   .variant-nine__pane--back {
-    width: 10.25rem;
+    width: 9.7rem;
   }
 
   .variant-nine__pane--one {
-    top: 45%;
-    left: 39%;
+    left: 39.5%;
   }
 
   .variant-nine__pane--two {
-    top: 45%;
-    left: 61%;
+    left: 60.5%;
   }
 
   .variant-nine__pane--three {
-    top: 55%;
-    left: 39%;
+    left: 39.5%;
   }
 
   .variant-nine__pane--four {
-    top: 55%;
-    left: 61%;
-  }
-
-  .variant-nine__pane--five {
-    top: 40.5%;
-    left: 50%;
-  }
-
-  .variant-nine__pane--six {
-    top: 59.5%;
-    left: 50%;
+    left: 60.5%;
   }
 
   .variant-nine__pane--seven {
-    top: 50%;
-    left: 32%;
+    left: 32.5%;
   }
 
   .variant-nine__pane--eight {
-    top: 50%;
-    left: 68%;
+    left: 67.5%;
   }
 
   .variant-nine__brand-lockup {
