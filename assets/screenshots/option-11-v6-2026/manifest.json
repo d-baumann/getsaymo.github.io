@@ -1,0 +1,130 @@
+{
+  "library": "Saymo Option 11 v6 website screenshot library",
+  "capturedAt": "2026-07-31",
+  "captureWindow": [
+    "2026-07-30",
+    "2026-07-31"
+  ],
+  "selectedCount": 29,
+  "alternativesIndex": "alternatives/README.md",
+  "imageFormat": "PNG",
+  "dimensions": {
+    "width": 1080,
+    "height": 2400
+  },
+  "app": {
+    "package": "com.saymo.app",
+    "versionName": "0.76",
+    "versionCode": 76
+  },
+  "device": {
+    "serial": "emulator-5554",
+    "physicalViewport": "1080x2400",
+    "physicalDensity": 420,
+    "captureViewportOverride": null,
+    "captureDensityOverride": null,
+    "viewportResetAfterCapture": true
+  },
+  "groups": [
+    {
+      "mode": "Learn",
+      "files": [
+        "learn-exam-enabled.png"
+      ]
+    },
+    {
+      "mode": "Video Dialogues / Speak",
+      "files": [
+        "video-dialogues-overview.png",
+        "speak-mic.png",
+        "speak-mcq.png",
+        "speak-word-order.png"
+      ]
+    },
+    {
+      "mode": "Listen",
+      "files": [
+        "listen-library-counts.png",
+        "listen-playing-half.png",
+        "listen-playing-three-quarter.png"
+      ]
+    },
+    {
+      "mode": "Words",
+      "files": [
+        "words-a1-a2.png",
+        "words-b.png",
+        "words-c.png"
+      ]
+    },
+    {
+      "mode": "Sentences",
+      "files": [
+        "sentences-a1-a2.png",
+        "sentences-b.png",
+        "sentences-c-all-blank.png"
+      ]
+    },
+    {
+      "mode": "Articles",
+      "files": [
+        "articles-active-30.png",
+        "articles-complete-top.png",
+        "articles-complete-scrolled.png"
+      ]
+    },
+    {
+      "mode": "Endings",
+      "files": [
+        "endings-active-populated.png",
+        "endings-complete-top.png",
+        "endings-complete-scrolled.png"
+      ]
+    },
+    {
+      "mode": "Cases",
+      "files": [
+        "cases-active-populated.png",
+        "cases-complete-top.png",
+        "cases-complete-scrolled.png"
+      ]
+    },
+    {
+      "mode": "Revision",
+      "files": [
+        "revision-noun-spelling.png",
+        "revision-sentence.png",
+        "revision-complete-10.png"
+      ]
+    },
+    {
+      "mode": "Progress",
+      "files": [
+        "progress-words-populated.png",
+        "progress-charts.png",
+        "progress-profile.png"
+      ]
+    }
+  ],
+  "qa": {
+    "humanVisualInspection": true,
+    "invalidCapturesSelected": 0,
+    "blankOrLoadingScreensSelected": 0,
+    "warningOrDebugOverlaysSelected": 0,
+    "baselineFilesModified": false,
+    "notes": [
+      "Learn shows every current mode, including enabled Exam Prep.",
+      "Speak uses three distinct production dialogue scenes: Bakery microphone, Ordering Food multiple choice, and a Post Office word-order task with several words placed.",
+      "The Listen chooser has no LIBRARY eyebrow and shows several real audiobook titles with settled numeric vocabulary counts. The selected Cinderella frame is deliberately paused at 9:42 of 13:57 on a benign ball passage, before the later violent shoe-fitting text; the separate halfway frame shows active playback.",
+      "Words C shows 180 known words and a two-word queue containing differenzieren and nichtsdestotrotz.",
+      "Sentences screenshots use the current clean task card without the former part-of-speech and level header; every A2, B2, and C2 frame shows the real neutral grayscale German QWERTZ Gboard with qwertz/yxc rows and a DE \u2022 EN spacebar label.",
+      "Articles shows score 31 after a wrong answer and recovery, followed by genuine 31-of-34 completion and distinct top/scrolled summary views.",
+      "Endings active shows score 42 after a deliberate final right-wrong-right sequence, with the live streak reset and no streak visualization; its distinct summary views remain available.",
+      "Revision captures use deterministic QA-seeded state in the production renderer. The English prompt stays permanently visible directly above the German task card with a narrow consistent gap and complete unclipped border; reveal controls and redundant instruction cues are absent.",
+      "Cases shows a clean active score-42 state after a streak reset and recovery, a genuine score-42 completion top, and the same completion modal positioned specifically on its populated Performance area.",
+      "Progress contains 217 learned words from 220 populated rows; its Word Stats table shows varied production Uses totals from 2 to 15 and surface-aware casing with Angst and Ärztin uppercase and arm lowercase, followed by a strong rising vocabulary chart and a current-source cross-mode profile.",
+      "The current bundled-debug APK was rebuilt and reinstalled from the exact current source before the final Revision captures; the installed base APK hash matched the assembled APK.",
+      "The alternatives/README.md master index links the broader sibling archives and records the semantic rejection gates used during curation."
+    ]
+  }
+}

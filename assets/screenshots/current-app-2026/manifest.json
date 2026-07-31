@@ -1,0 +1,148 @@
+{
+  "capturedAt": "2026-07-30",
+  "appPackage": "com.saymo.app",
+  "appVersion": "0.76 (76)",
+  "device": "emulator-5554",
+  "dimensions": {
+    "width": 1080,
+    "height": 2400
+  },
+  "visualAudit": {
+    "humanStyleInspection": true,
+    "contactSheet": "contact-sheet.png",
+    "selectedCount": 25,
+    "blankOrLoadingScreensInSelectedSet": 0,
+    "byteExactSourceCopies": 25
+  },
+  "assets": [
+    {
+      "file": "home-bakery.png",
+      "category": "navigation",
+      "description": "Current Home screen for The bakery, chapter 1 of 3."
+    },
+    {
+      "file": "learn-overview.png",
+      "category": "navigation",
+      "description": "Learn grid showing Speak, Words, Sentences, Articles, Cases, Endings, Listen, Exam Prep, and Revise."
+    },
+    {
+      "file": "dialogue-library-top.png",
+      "category": "dialogue-library",
+      "description": "Top of Video Dialogues with Bakery, Ordering food, Post office, and Asking for directions."
+    },
+    {
+      "file": "dialogue-library-later.png",
+      "category": "dialogue-library",
+      "description": "Later dialogue cards including Ordering coffee, Car rental, Pharmacy visit, and Hotel check-in."
+    },
+    {
+      "file": "dialogue-bakery-chapters.png",
+      "category": "dialogue-chapters",
+      "description": "The bakery chapter selector over the dialogue grid."
+    },
+    {
+      "file": "dialogue-ordering-food-chapters.png",
+      "category": "dialogue-chapters",
+      "description": "Ordering food chapter selector over the dialogue grid."
+    },
+    {
+      "file": "dialogue-post-office-chapters.png",
+      "category": "dialogue-chapters",
+      "description": "The post office chapter selector over the dialogue grid."
+    },
+    {
+      "file": "dialogue-directions-chapters.png",
+      "category": "dialogue-chapters",
+      "description": "Asking for directions chapter selector over the dialogue grid."
+    },
+    {
+      "file": "dialogue-hotel-check-in-chapters.png",
+      "category": "dialogue-chapters",
+      "description": "Hotel check-in chapter selector over the later dialogue grid."
+    },
+    {
+      "file": "dialogue-car-rental-chapters.png",
+      "category": "dialogue-chapters",
+      "description": "Car rental chapter selector over the later dialogue grid."
+    },
+    {
+      "file": "dialogue-mcq-active.png",
+      "category": "dialogue-task",
+      "description": "Active cinematic multiple-choice dialogue task."
+    },
+    {
+      "file": "dialogue-mcq-complete.png",
+      "category": "dialogue-task",
+      "description": "Completed cinematic multiple-choice dialogue task."
+    },
+    {
+      "file": "dialogue-word-order-active.png",
+      "category": "dialogue-task",
+      "description": "Active cinematic word-order dialogue task."
+    },
+    {
+      "file": "dialogue-spelling-active.png",
+      "category": "dialogue-task",
+      "description": "Active cinematic spelling dialogue task."
+    },
+    {
+      "file": "dialogue-preposition-active.png",
+      "category": "dialogue-task",
+      "description": "Active cinematic preposition dialogue task."
+    },
+    {
+      "file": "dialogue-article-active.png",
+      "category": "dialogue-task",
+      "description": "Active cinematic article dialogue task."
+    },
+    {
+      "file": "listen-library.png",
+      "category": "listen",
+      "description": "Listen audiobook library."
+    },
+    {
+      "file": "listen-chapters.png",
+      "category": "listen",
+      "description": "Aschenputtel chapter chooser with open and word-training actions."
+    },
+    {
+      "file": "words-initial.png",
+      "category": "words",
+      "description": "Word Sweep initial card state."
+    },
+    {
+      "file": "words-revealed.png",
+      "category": "words",
+      "description": "Word Sweep revealed translation state."
+    },
+    {
+      "file": "sentences-initial.png",
+      "category": "sentences",
+      "description": "Cloze Flow sentence task."
+    },
+    {
+      "file": "articles-initial.png",
+      "category": "articles",
+      "description": "Articles task with der, die, and das columns."
+    },
+    {
+      "file": "cases-initial.png",
+      "category": "cases",
+      "description": "Cases task with Nominativ, Akkusativ, Dativ, and Genitiv choices."
+    },
+    {
+      "file": "endings-initial.png",
+      "category": "endings",
+      "description": "Endings fill task with six ending choices."
+    },
+    {
+      "file": "revision-completed.png",
+      "category": "revision",
+      "description": "Completed Revise translation state."
+    }
+  ],
+  "knownCaptureLimitations": [
+    "Live dialogue video playback could not settle because the lesson backend returned a network-preparation state.",
+    "The Listen player could not download audio in the capture environment, so only stable library and chapter screens were selected."
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "capturedAt": "2026-07-30",
+  "appPackage": "com.saymo.app",
+  "appVersion": "0.76 (76)",
+  "device": "emulator-5554",
+  "dimensions": {
+    "width": 1080,
+    "height": 2400
+  },
+  "captureViewport": {
+    "sizeOverride": "1080x2400",
+    "densityOverride": 420,
+    "physicalSize": "968x2376",
+    "physicalDensity": 320,
+    "overrideResetAfterCapture": true
+  },
+  "visualAudit": {
+    "verdict": "ACCEPT",
+    "humanStyleInspection": true,
+    "contactSheet": "contact-sheet.png",
+    "selectedCount": 36,
+    "blankOrLoadingScreensInSelectedSet": 0,
+    "debugOrSystemOverlaysInSelectedSet": 0,
+    "stretchingOrWarpingFound": false,
+    "aspectMismatchFound": false,
+    "controlCollisionsFound": false,
+    "readabilityFailuresFound": false
+  },
+  "speakSequences": [
+    {
+      "id": "a",
+      "story": "Car rental",
+      "continuity": "story selector plus same-prompt active and completed states",
+      "files": [
+        "speak-seq-a-1.png",
+        "speak-seq-a-2.png",
+        "speak-seq-a-3.png"
+      ]
+    },
+    {
+      "id": "b",
+      "story": "The bakery",
+      "continuity": "story selector plus representative spelling and later word-order states",
+      "files": [
+        "speak-seq-b-1.png",
+        "speak-seq-b-2.png",
+        "speak-seq-b-3.png"
+      ]
+    },
+    {
+      "id": "c",
+      "story": "The post office",
+      "continuity": "story selector plus same-prompt active and feedback states",
+      "files": [
+        "speak-seq-c-1.png",
+        "speak-seq-c-2.png",
+        "speak-seq-c-3.png"
+      ]
+    }
+  ],
+  "modes": {
+    "learn": [
+      "learn-overview.png"
+    ],
+    "listen": [
+      "listen-library-counts.png",
+      "listen-example-a.png",
+      "listen-example-b.png",
+      "listen-train.png"
+    ],
+    "words": [
+      "words-primary.png",
+      "words-reveal.png",
+      "words-known.png"
+    ],
+    "sentences": [
+      "sentences-primary.png",
+      "sentences-active.png",
+      "sentences-feedback.png"
+    ],
+    "articles": [
+      "articles-detail-primary.png",
+      "articles-detail-feedback.png",
+      "articles-detail-summary.png"
+    ],
+    "endings": [
+      "endings-detail-primary.png",
+      "endings-detail-feedback.png",
+      "endings-detail-summary.png"
+    ],
+    "cases": [
+      "cases-detail-primary.png",
+      "cases-detail-feedback.png",
+      "cases-detail-summary.png"
+    ],
+    "revision": [
+      "revision-detail-primary.png",
+      "revision-detail-feedback.png",
+      "revision-detail-complete.png",
+      "revision-detail-queue.png"
+    ],
+    "progress": [
+      "progress-detail-words.png",
+      "progress-detail-vocabulary.png",
+      "progress-detail-profile.png"
+    ]
+  },
+  "representability": {
+    "listenNumericCounts": {
+      "topLevelLibrary": "generic Train new words action only",
+      "chapterCards": {
+        "Etwas von den Wurzelkindern": 102,
+        "Aschenputtel": 465
+      },
+      "trainingState": "465 Left"
+    },
+    "populatedSummaries": {
+      "endings": {
+        "score": 3,
+        "hasNonzeroPerformanceCells": true
+      },
+      "cases": {
+        "score": 3,
+        "mistakeRows": 3
+      }
+    },
+    "networkLimitations": [
+      "Live dialogue video playback did not settle reliably and was not selected.",
+      "Audiobook playback/download states were not selected; stable library, chapter, and word-training states are represented."
+    ]
+  },
+  "rejectedCaptures": [
+    "listen-library-personalized.png: debugger-warning toast",
+    "post-office-article-active.png: debugger-warning toast",
+    "post-office-article-active-clean-2.png: debugger-warning toast",
+    "post-office-article-active-rebootstrap.png: TrackPlayer error toast",
+    "post-office-article-active-fast.png: blank/transitional screen with debugger-warning toast",
+    "spelling-complete.png: dialogue transition with no task UI",
+    "live dialogue loading/preparing states",
+    "audiobook unavailable-audio/player-error states"
+  ]
+}

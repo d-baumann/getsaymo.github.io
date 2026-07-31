@@ -1,0 +1,125 @@
+{
+  "capturedAt": "2026-07-30",
+  "appPackage": "com.saymo.app",
+  "appVersion": "0.76 (76)",
+  "device": "emulator-5554",
+  "dimensions": {
+    "width": 1080,
+    "height": 2400
+  },
+  "visualAudit": {
+    "verdict": "ACCEPT",
+    "humanStyleInspection": true,
+    "contactSheet": "contact-sheet.png",
+    "selectedCount": 28,
+    "blankOrLoadingScreensInSelectedSet": 0,
+    "stretchingOrWarpingFound": false,
+    "aspectMismatchFound": false,
+    "controlCollisionsFound": false,
+    "readabilityFailuresFound": false
+  },
+  "valueAreas": {
+    "speakingPractice": {
+      "support": "partial",
+      "files": [
+        "speak-primary.png",
+        "speak-secondary.png"
+      ],
+      "note": "The public Speak entry and an active player response inside the current video-dialogue flow are visible. A stable live microphone/listening checkpoint was not available from the public flow."
+    },
+    "contextualDialogueQuestions": {
+      "support": "full",
+      "files": [
+        "context-primary.png",
+        "context-secondary.png",
+        "context-library.png"
+      ]
+    },
+    "adaptiveFlashcards": {
+      "support": "interaction-visible",
+      "files": [
+        "cards-primary.png",
+        "cards-reveal.png",
+        "cards-known.png",
+        "cards-queued.png"
+      ],
+      "note": "Known, unknown, and queue state changes are visible. The UI does not explicitly label its selection algorithm as adaptive."
+    },
+    "nounArticles": {
+      "support": "full",
+      "files": [
+        "articles-primary.png",
+        "articles-feedback.png",
+        "articles-summary.png"
+      ]
+    },
+    "wordEndings": {
+      "support": "full",
+      "files": [
+        "endings-primary.png",
+        "endings-feedback.png",
+        "endings-summary.png"
+      ]
+    },
+    "grammaticalCase": {
+      "support": "full",
+      "files": [
+        "cases-primary.png",
+        "cases-feedback.png",
+        "cases-summary.png"
+      ]
+    },
+    "audiobooks": {
+      "support": "partial",
+      "files": [
+        "listen-library-primary.png",
+        "listen-chapter-primary.png",
+        "listen-train.png"
+      ],
+      "note": "Library, chapter selection, and Train new words are visible. Active playback was unavailable because chapter audio could not be downloaded in the capture environment."
+    },
+    "progressTracking": {
+      "support": "full",
+      "files": [
+        "progress-primary.png",
+        "progress-secondary.png"
+      ]
+    },
+    "centralWordKnowledge": {
+      "support": "sequence-visible",
+      "files": [
+        "knowledge-primary.png",
+        "knowledge-secondary.png"
+      ],
+      "note": "The sequence shows central word accuracy/uses and a resulting Word Sweep known state. No single current screen explicitly states that one knowledge model is shared across every mode."
+    },
+    "spacedRepetitionRevision": {
+      "support": "revision-flow-visible",
+      "files": [
+        "revision-primary.png",
+        "revision-feedback.png",
+        "revision-complete.png",
+        "cards-queued.png"
+      ],
+      "note": "Active, feedback, completion, and queued-review states are visible. The Revision screen itself does not use the phrase spaced repetition."
+    }
+  },
+  "acquisitionClaims": {
+    "free": {
+      "screenshotBacked": false,
+      "note": "Some app copy refers narrowly to free lessons, but the selected current screens do not establish that the entire app is free."
+    },
+    "noSignup": {
+      "screenshotBacked": false,
+      "note": "The app starts without a visible signup screen, but no current UI explicitly states No signup."
+    },
+    "noCard": {
+      "screenshotBacked": false,
+      "note": "No current UI or source copy found states No card required."
+    },
+    "startImmediately": {
+      "screenshotBacked": false,
+      "note": "Home and Learn are immediately accessible in the captured state, but no selected UI explicitly makes this claim."
+    }
+  }
+}
