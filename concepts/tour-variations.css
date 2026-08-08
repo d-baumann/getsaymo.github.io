@@ -227,9 +227,8 @@
   top: 0.5rem;
   left: 50%;
   display: grid;
-  grid-template-columns: 24px auto 24px;
+  grid-template-columns: auto;
   align-items: center;
-  gap: 0.1rem;
   width: max-content;
   max-width: calc(100vw - 1rem);
   padding: 0;
@@ -239,30 +238,6 @@
   transform: translateX(-50%);
   pointer-events: auto;
   backdrop-filter: none;
-}
-
-.guided-button {
-  display: grid;
-  width: 24px;
-  height: 24px;
-  place-items: center;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  color: var(--ink);
-  background: transparent;
-  font: 500 0.72rem/1 var(--sans);
-  cursor: pointer;
-}
-
-.guided-button:hover,
-.guided-button:focus-visible {
-  background: var(--sage-light);
-}
-
-.guided-button:disabled {
-  opacity: 0.22;
-  cursor: default;
 }
 
 .guided-steps {
@@ -415,7 +390,7 @@
     min-height: 0;
     grid-template-columns: 1fr;
     align-content: center;
-    gap: 3rem;
+    gap: clamp(3.5rem, 6svh, 4.5rem);
     padding: 6.25rem 4vw 7.5rem;
   }
 
@@ -449,7 +424,7 @@
     grid-template-columns: minmax(260px, 0.82fr) minmax(360px, 1.18fr);
     align-content: center;
     align-items: center;
-    gap: clamp(1rem, 2.5vw, 2rem);
+    gap: clamp(2.25rem, 4vw, 3.25rem);
     padding: 2.5rem 3.5vw 6rem;
   }
 
@@ -473,7 +448,7 @@
     grid-template-columns: minmax(300px, 0.75fr) minmax(0, 1.25fr);
     align-content: center;
     align-items: center;
-    gap: clamp(1.75rem, 3vw, 2.5rem);
+    gap: clamp(3rem, 5.5vw, 4.25rem);
     padding: 3.25rem 4vw 6.5rem;
   }
 
@@ -638,13 +613,8 @@
 
   .guided-toolbar {
     top: 0.25rem;
-    grid-template-columns: 22px auto 22px;
+    grid-template-columns: auto;
     padding: 0;
-  }
-
-  .guided-button {
-    width: 22px;
-    height: 22px;
   }
 
   .guided-steps {
@@ -671,7 +641,7 @@
   .tour-guided-page .tour-v4-mode.guided-slide {
     height: 100svh;
     min-height: 0;
-    gap: 1.25rem;
+    gap: clamp(2.25rem, 5svh, 3rem);
     padding: 5rem 0.75rem 6.5rem;
   }
 

@@ -16,13 +16,12 @@
 
   const slides = Array.from(document.querySelectorAll("[data-guided-slide]"));
   const steps = Array.from(guidedTour.querySelectorAll("[data-guided-target]"));
-  const previousButtons = Array.from(guidedTour.querySelectorAll("[data-guided-prev]"));
-  const nextButtons = Array.from(guidedTour.querySelectorAll("[data-guided-next]"));
   const progress = guidedTour.querySelector("[data-guided-progress]");
   const currentLabel = guidedTour.querySelector("[data-guided-current]");
   const slideIds = slides.map((slide) => slide.dataset.guidedSlide);
   let currentIndex = Math.max(0, slideIds.indexOf(location.hash.slice(1)));
   let wheelLocked = false;
+  let touchStartX = null;
   let touchStartY = null;
 
   const activate = (index, { focusStep = false, updateHash = true } = {}) => {
@@ -47,18 +46,6 @@
       if (active && focusStep) step.focus();
     });
 
-    previousButtons.forEach((button) => {
-      button.disabled = currentIndex === 0;
-    });
-
-    nextButtons.forEach((button) => {
-      button.disabled = currentIndex === slides.length - 1;
-      button.setAttribute(
-        "aria-label",
-        currentIndex === slides.length - 2 ? "Start learning" : "Next learning mode"
-      );
-    });
-
     if (progress) {
       progress.style.width = `${((currentIndex + 1) / slides.length) * 100}%`;
     }
@@ -80,30 +67,17 @@
     });
   });
 
-  previousButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      activate(currentIndex - 1, { focusStep: true });
-    });
-  });
-
-  nextButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      activate(currentIndex + 1, { focusStep: true });
-    });
-  });
-
   window.addEventListener(
     "wheel",
     (event) => {
-      if (Math.abs(event.deltaY) < 18 || Math.abs(event.deltaY) < Math.abs(event.deltaX)) {
-        return;
-      }
+      const distance = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
+      if (Math.abs(distance) < 18) return;
 
       event.preventDefault();
       if (wheelLocked) return;
 
       wheelLocked = true;
-      activate(currentIndex + Math.sign(event.deltaY));
+      activate(currentIndex + Math.sign(distance));
       window.setTimeout(() => {
         wheelLocked = false;
       }, 520);
@@ -114,6 +88,7 @@
   window.addEventListener(
     "touchstart",
     (event) => {
+      touchStartX = event.touches[0]?.clientX ?? null;
       touchStartY = event.touches[0]?.clientY ?? null;
     },
     { passive: true }
@@ -122,9 +97,13 @@
   window.addEventListener(
     "touchend",
     (event) => {
-      if (touchStartY === null) return;
+      if (touchStartX === null || touchStartY === null) return;
+      const touchEndX = event.changedTouches[0]?.clientX ?? touchStartX;
       const touchEndY = event.changedTouches[0]?.clientY ?? touchStartY;
-      const distance = touchStartY - touchEndY;
+      const distanceX = touchStartX - touchEndX;
+      const distanceY = touchStartY - touchEndY;
+      const distance = Math.abs(distanceX) > Math.abs(distanceY) ? distanceX : distanceY;
+      touchStartX = null;
       touchStartY = null;
       if (Math.abs(distance) < 48) return;
       activate(currentIndex + Math.sign(distance));
