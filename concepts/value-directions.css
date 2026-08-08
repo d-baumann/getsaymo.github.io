@@ -1828,30 +1828,33 @@ a {
 }
 
 .tour-v4-icon--progress {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  gap: 9px;
-  padding-bottom: 25px;
+  position: relative;
+  display: block;
 }
 
 .tour-v4-icon--progress i {
+  position: absolute;
+  bottom: 21%;
   display: block;
-  width: 13px;
+  width: 11%;
+  box-sizing: border-box;
   border: 2px solid var(--ink);
-  border-radius: 4px 4px 0 0;
+  border-radius: 0;
 }
 
 .tour-v4-icon--progress i:nth-child(1) {
-  height: 29px;
+  left: 26%;
+  height: 24%;
 }
 
 .tour-v4-icon--progress i:nth-child(2) {
-  height: 50px;
+  left: 44.5%;
+  height: 42%;
 }
 
 .tour-v4-icon--progress i:nth-child(3) {
-  height: 69px;
+  left: 63%;
+  height: 58%;
 }
 
 .tour-v4-mode__copy > p {
@@ -2024,25 +2027,8 @@ a {
     height: 73px;
   }
 
-  .tour-v4-icon--progress {
-    gap: 7px;
-    padding-bottom: 20px;
-  }
-
   .tour-v4-icon--progress i {
-    width: 10px;
-  }
-
-  .tour-v4-icon--progress i:nth-child(1) {
-    height: 23px;
-  }
-
-  .tour-v4-icon--progress i:nth-child(2) {
-    height: 40px;
-  }
-
-  .tour-v4-icon--progress i:nth-child(3) {
-    height: 55px;
+    border-width: 1.5px;
   }
 
   .tour-v4-screens,

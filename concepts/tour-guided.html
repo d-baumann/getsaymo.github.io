@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f1eee6">
+  <title>Saymo | Guided product tour</title>
+  <meta name="description" content="Click through a guided tour of Saymo across speaking, listening, vocabulary, grammar, revision and progress.">
+  <link rel="icon" href="../assets/images/app-icon.png">
+  <link rel="stylesheet" href="value-directions.css">
+  <link rel="stylesheet" href="tour-variations.css">
+  <script src="scripts.js" defer></script>
+  <script src="tour-variations.js" defer></script>
+</head>
+<body class="tour-v4-page tour-guided-page">
+  <a class="v3-skip" href="#main">Skip to content</a>
+
+  <main id="main">
+    <section class="tour-v4-hero guided-slide" id="overview" role="tabpanel" aria-labelledby="guided-step-overview" data-guided-slide="overview">
+      <div class="tour-v4-hero__copy">
+        <h1>The most useful free language learning app.</h1>
+      </div>
+      <div class="tour-v4-hero__screens" aria-label="Saymo app overview">
+        <figure class="v3-phone"><img data-shot="video-dialogues-overview" alt="Saymo video dialogues"></figure>
+        <figure class="v3-phone"><img data-shot="learn-exam-enabled" alt="The Saymo Learn page with Exam Prep"></figure>
+        <figure class="v3-phone"><img data-shot="speak-mcq" alt="A Saymo dialogue task"></figure>
+      </div>
+    </section>
+
+    <section class="guided-experience" data-guided-tour id="tour" aria-label="Guided Saymo product tour">
+      <nav class="guided-toolbar" aria-label="Learning modes">
+        <button class="guided-button" type="button" data-guided-prev aria-label="Previous learning mode">
+          <span aria-hidden="true">&larr;</span>
+        </button>
+        <div class="guided-steps" role="tablist" aria-label="Choose a learning mode">
+          <button class="guided-step" type="button" role="tab" id="guided-step-overview" aria-label="Overview" aria-controls="overview" data-guided-target="overview"><span>Overview</span></button>
+          <button class="guided-step" type="button" role="tab" id="guided-step-speak" aria-label="Speak" aria-controls="speak" data-guided-target="speak"><span>Speak</span></button>
+          <button class="guided-step" type="button" role="tab" id="guided-step-listen" aria-label="Listen" aria-controls="listen" data-guided-target="listen"><span>Listen</span></button>
+          <button class="guided-step" type="button" role="tab" id="guided-step-words" aria-label="Words" aria-controls="words" data-guided-target="words"><span>Words</span></button>
+          <button class="guided-step" type="button" role="tab" id="guided-step-sentences" aria-label="Sentences" aria-controls="sentences" data-guided-target="sentences"><span>Sentences</span></button>
+          <button class="guided-step" type="button" role="tab" id="guided-step-articles" aria-label="Articles" aria-controls="articles" data-guided-target="articles"><span>Articles</span></button>
+          <button class="guided-step" type="button" role="tab" id="guided-step-endings" aria-label="Endings" aria-controls="endings" data-guided-target="endings"><span>Endings</span></button>
+          <button class="guided-step" type="button" role="tab" id="guided-step-cases" aria-label="Cases" aria-controls="cases" data-guided-target="cases"><span>Cases</span></button>
+          <button class="guided-step" type="button" role="tab" id="guided-step-revision" aria-label="Revision" aria-controls="revision" data-guided-target="revision"><span>Revision</span></button>
+          <button class="guided-step" type="button" role="tab" id="guided-step-progress" aria-label="Progress" aria-controls="progress" data-guided-target="progress"><span>Progress</span></button>
+          <button class="guided-step" type="button" role="tab" id="guided-step-download" aria-label="Start learning" aria-controls="download" data-guided-target="download"><span>Start learning</span></button>
+        </div>
+        <button class="guided-button" type="button" data-guided-next aria-label="Next learning mode">
+          <span aria-hidden="true">&rarr;</span>
+        </button>
+      </nav>
+      <div class="guided-progress" aria-hidden="true"><span data-guided-progress></span></div>
+      <p class="guided-count" aria-live="polite"><strong data-guided-current>01</strong><span>/ 11</span></p>
+
+      <div class="guided-slides">
+    <section class="tour-v4-mode tour-v4-mode--speak guided-slide" id="speak" role="tabpanel" aria-labelledby="guided-step-speak" data-guided-slide="speak">
+      <div class="tour-v4-mode__copy" data-guided-number="01">
+        <div class="tour-v4-mode__title">
+          <span class="tour-v4-icon"><img src="../assets/images/learn-icons/speak.png" alt=""></span>
+          <h2>Speak</h2>
+        </div>
+        <p>Speak through common real-world conversations. Answer aloud, choose what to say and build the sentence.</p>
+      </div>
+      <div class="tour-v4-sequence">
+        <figure class="v3-phone"><img data-shot="speak-mic" alt="Speaking with the microphone"></figure>
+        <figure class="v3-phone"><img data-shot="speak-mcq" alt="Choosing a reply in a dialogue"></figure>
+        <figure class="v3-phone"><img data-shot="speak-word-order" alt="Building a reply in a dialogue"></figure>
+      </div>
+    </section>
+
+    <section class="tour-v4-mode guided-slide" id="listen" role="tabpanel" aria-labelledby="guided-step-listen" data-guided-slide="listen" hidden>
+      <div class="tour-v4-mode__copy" data-guided-number="02">
+        <div class="tour-v4-mode__title">
+          <span class="tour-v4-icon"><img src="../assets/images/learn-icons/listen.png" alt=""></span>
+          <h2>Listen</h2>
+        </div>
+        <p>Every audiobook shows how many words are new to you. Train them first, then follow each word as you listen.</p>
+      </div>
+      <div class="tour-v4-screens">
+        <figure class="v3-phone"><img data-shot="listen-library-counts" alt="Audiobooks with personalized new word counts"></figure>
+        <figure class="v3-phone"><img data-shot="listen-playing-half" alt="An audiobook halfway through a chapter"></figure>
+        <figure class="v3-phone"><img data-shot="listen-playing-three-quarter" alt="A different audiobook three quarters through a chapter"></figure>
+      </div>
+    </section>
+
+    <section class="tour-v4-mode guided-slide" id="words" role="tabpanel" aria-labelledby="guided-step-words" data-guided-slide="words" hidden>
+      <div class="tour-v4-mode__copy" data-guided-number="03">
+        <div class="tour-v4-mode__title">
+          <span class="tour-v4-icon"><img src="../assets/images/learn-icons/words.png" alt=""></span>
+          <h2>Words</h2>
+        </div>
+        <p>Adaptive cards respond to what you know. Every answer updates the same word knowledge used throughout Saymo.</p>
+      </div>
+      <div class="tour-v4-screens">
+        <figure class="v3-phone"><img data-shot="words-a1-a2" alt="A1 and A2 German word practice"></figure>
+        <figure class="v3-phone"><img data-shot="words-b" alt="B level German word practice with more words known"></figure>
+        <figure class="v3-phone"><img data-shot="words-c" alt="C level German word practice with advanced progress"></figure>
+      </div>
+    </section>
+
+    <section class="tour-v4-mode guided-slide" id="sentences" role="tabpanel" aria-labelledby="guided-step-sentences" data-guided-slide="sentences" hidden>
+      <div class="tour-v4-mode__copy" data-guided-number="04">
+        <div class="tour-v4-mode__title">
+          <span class="tour-v4-icon"><img src="../assets/images/learn-icons/sentences.png" alt=""></span>
+          <h2>Sentences</h2>
+        </div>
+        <p>Build complete sentences until the words come in the right order naturally.</p>
+      </div>
+      <div class="tour-v4-screens">
+        <figure class="v3-phone"><img data-shot="sentences-a1-a2" alt="A1 and A2 sentence practice"></figure>
+        <figure class="v3-phone"><img data-shot="sentences-b" alt="B level sentence practice"></figure>
+        <figure class="v3-phone"><img data-shot="sentences-c-all-blank" alt="Advanced sentence practice with every word blanked"></figure>
+      </div>
+    </section>
+
+    <section class="tour-v4-mode guided-slide" id="articles" role="tabpanel" aria-labelledby="guided-step-articles" data-guided-slide="articles" hidden>
+      <div class="tour-v4-mode__copy" data-guided-number="05">
+        <div class="tour-v4-mode__title">
+          <span class="tour-v4-icon"><img src="../assets/images/learn-icons/articles.png" alt=""></span>
+          <h2>Articles</h2>
+        </div>
+        <p>Learn every noun together with der, die or das.</p>
+      </div>
+      <div class="tour-v4-screens">
+        <figure class="v3-phone"><img data-shot="articles-active-30" alt="German article practice after thirty words"></figure>
+        <figure class="v3-phone"><img data-shot="articles-complete-top" alt="Article practice results"></figure>
+        <figure class="v3-phone"><img data-shot="articles-complete-scrolled" alt="Detailed article results"></figure>
+      </div>
+    </section>
+
+    <section class="tour-v4-mode guided-slide" id="endings" role="tabpanel" aria-labelledby="guided-step-endings" data-guided-slide="endings" hidden>
+      <div class="tour-v4-mode__copy" data-guided-number="06">
+        <div class="tour-v4-mode__title">
+          <span class="tour-v4-icon"><img src="../assets/images/learn-icons/endings.png" alt=""></span>
+          <h2>Endings</h2>
+        </div>
+        <p>Choose the ending the sentence needs. The progress table shows exactly which forms still need work.</p>
+      </div>
+      <div class="tour-v4-screens">
+        <figure class="v3-phone"><img data-shot="endings-active-populated" alt="Word ending practice with populated progress"></figure>
+        <figure class="v3-phone"><img data-shot="endings-complete-top" alt="Word ending results"></figure>
+        <figure class="v3-phone"><img data-shot="endings-complete-scrolled" alt="Detailed word ending progress table"></figure>
+      </div>
+    </section>
+
+    <section class="tour-v4-mode guided-slide" id="cases" role="tabpanel" aria-labelledby="guided-step-cases" data-guided-slide="cases" hidden>
+      <div class="tour-v4-mode__copy" data-guided-number="07">
+        <div class="tour-v4-mode__title">
+          <span class="tour-v4-icon"><img src="../assets/images/learn-icons/cases.png" alt=""></span>
+          <h2>Cases</h2>
+        </div>
+        <p>Identify the case from meaning and context, then see where your accuracy is strongest.</p>
+      </div>
+      <div class="tour-v4-screens">
+        <figure class="v3-phone"><img data-shot="cases-active-populated" alt="German case practice with populated progress"></figure>
+        <figure class="v3-phone"><img data-shot="cases-complete-top" alt="German case results"></figure>
+        <figure class="v3-phone"><img data-shot="cases-complete-scrolled" alt="Detailed German case progress"></figure>
+      </div>
+    </section>
+
+    <section class="tour-v4-mode guided-slide" id="revision" role="tabpanel" aria-labelledby="guided-step-revision" data-guided-slide="revision" hidden>
+      <div class="tour-v4-mode__copy" data-guided-number="08">
+        <div class="tour-v4-mode__title">
+          <span class="tour-v4-icon"><img src="../assets/images/learn-icons/revise.png" alt=""></span>
+          <h2>Revision</h2>
+        </div>
+        <p>Spaced revision brings back the words and phrases most worth another look.</p>
+      </div>
+      <div class="tour-v4-screens">
+        <figure class="v3-phone"><img data-shot="revision-noun-spelling" alt="Spelling a German noun in revision"></figure>
+        <figure class="v3-phone"><img data-shot="revision-sentence" alt="A German sentence revision task"></figure>
+        <figure class="v3-phone"><img data-shot="revision-complete-10" alt="Revision complete after ten tasks"></figure>
+      </div>
+    </section>
+
+    <section class="tour-v4-mode tour-v4-mode--progress guided-slide" id="progress" role="tabpanel" aria-labelledby="guided-step-progress" data-guided-slide="progress" hidden>
+      <div class="tour-v4-mode__copy" data-guided-number="09">
+        <div class="tour-v4-mode__title">
+          <span class="tour-v4-icon tour-v4-icon--progress" aria-hidden="true"><i></i><i></i><i></i></span>
+          <h2>Progress</h2>
+        </div>
+        <p>One profile tracks your words, vocabulary, grammar, speaking and revision across every mode.</p>
+      </div>
+      <div class="tour-v4-screens">
+        <figure class="v3-phone"><img data-shot="progress-words-populated" alt="Populated word knowledge statistics"></figure>
+        <figure class="v3-phone"><img data-shot="progress-charts" alt="Detailed learning progress"></figure>
+        <figure class="v3-phone"><img data-shot="progress-profile" alt="Complete learning profile"></figure>
+      </div>
+    </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="tour-v4-footer guided-slide guided-final-slide" id="download" role="tabpanel" aria-labelledby="guided-step-download" data-guided-slide="download" hidden>
+    <div class="tour-v4-footer__copy">
+      <h2>Start learning.</h2>
+      <p>Free. No signup. No card.</p>
+    </div>
+    <div class="tour-v4-footer__aside">
+      <div class="tour-v4-footer__actions" aria-label="Download Saymo">
+        <a class="tour-v4-store" data-store="ios" href="#" aria-label="Download Saymo on the App Store">
+          <img src="../assets/images/app-store-badge.svg" alt="Download on the App Store">
+        </a>
+        <a class="tour-v4-store" data-store="android" href="#" aria-label="Get Saymo on Google Play">
+          <img src="../assets/images/google-play-badge.png" alt="Get it on Google Play">
+        </a>
+      </div>
+    </div>
+    <nav class="tour-v4-legal" aria-label="Support and legal">
+      <a href="../support.html">Support</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../terms.html">Terms of Use (EULA)</a>
+    </nav>
+  </footer>
+
+  <aside class="tour-floating-footer" data-floating-footer aria-label="Download Saymo">
+    <div class="tour-floating-footer__meta">
+      <p class="tour-floating-footer__copy"><strong>Start learning.</strong><span>Free. No signup. No card.</span></p>
+    </div>
+    <div class="tour-floating-footer__actions">
+      <a data-store="ios" href="#" aria-label="Download Saymo on the App Store">
+        <img src="../assets/images/app-store-badge.svg" alt="Download on the App Store">
+      </a>
+      <a data-store="android" href="#" aria-label="Get Saymo on Google Play">
+        <img src="../assets/images/google-play-badge.png" alt="Get it on Google Play">
+      </a>
+    </div>
+  </aside>
+</body>
+</html>
