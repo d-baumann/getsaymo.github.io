@@ -11,6 +11,10 @@
   });
 
   const applyShots = async () => {
+    // The HTML includes direct relative image sources so it also works when
+    // opened from disk. Browsers block manifest fetches on file:// pages.
+    if (location.protocol === "file:") return;
+
     try {
       const responses = await Promise.all([
         fetch("shots.json", { cache: "no-store" }),

@@ -10,6 +10,11 @@
   --rose: #b99a95;
   --rose-light: #eadeda;
   --plum: #453a40;
+  --tour-white: #fbfaf6;
+  --tour-red-soft: #f1ddda;
+  --tour-orange-soft: #f3e2ce;
+  --tour-blue-soft: #dfe8f0;
+  --tour-green-soft: #dce5d8;
   --line: rgba(23, 23, 21, 0.15);
   --serif: "Newsreader", Georgia, serif;
   --sans: "DM Sans", "Segoe UI", sans-serif;
@@ -1703,6 +1708,7 @@ a {
   gap: 5vw;
   padding: 4rem 5vw;
   overflow: hidden;
+  background: var(--tour-white);
 }
 
 .tour-v4-hero__copy {
@@ -1786,6 +1792,22 @@ a {
 
 .tour-v4-mode:nth-of-type(4n) {
   background: var(--sage-light);
+}
+
+.tour-v4-mode.tour-v4-mode--speak {
+  background: var(--tour-red-soft);
+}
+
+.tour-v4-mode.tour-v4-mode--listen {
+  background: var(--tour-orange-soft);
+}
+
+.tour-v4-mode.tour-v4-mode--grammar {
+  background: var(--tour-blue-soft);
+}
+
+.tour-v4-mode.tour-v4-mode--progress {
+  background: var(--tour-green-soft);
 }
 
 .tour-v4-mode__copy {
