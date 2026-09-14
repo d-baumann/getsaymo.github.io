@@ -22,14 +22,14 @@
   <main class="legal-shell">
     <header class="legal-hero">
       <h1>Privacy Policy</h1>
-      <p class="legal-date">Last updated: March 12, 2026</p>
+      <p class="legal-date">Last updated: August 25, 2026</p>
       <p class="legal-intro">Saymo is a dialogue-based language learning app designed to help users build fluency through immersive, story-driven speaking practice. This Privacy Policy explains what information Saymo may collect, how that information is used, and the choices available to users.</p>
     </header>
 
     <article class="legal-document">
       <section>
         <h2>1. Scope</h2>
-        <p>This Privacy Policy applies to the Saymo mobile application and related in-app features and services.</p>
+        <p>This Privacy Policy applies to the Saymo mobile applications, the Saymo web application at app.getsaymo.com, and related features, websites, APIs, and services.</p>
       </section>
 
       <section>
@@ -51,12 +51,14 @@
           <li>vocabulary and phrase statistics</li>
           <li>difficulty and language preferences</li>
           <li>locally cached lesson assets, audio, and other downloaded content</li>
-          <li>locally generated identifiers used for app function and analytics</li>
+          <li>a random installation key stored on your device or browser and used to obtain a short-lived access token</li>
+          <li>locally generated session identifiers used for app function and analytics</li>
         </ul>
 
-        <h3>C. Account Data</h3>
+        <h3>C. Account and Installation Data</h3>
         <ul>
-          <li>We do not require you to provide your name or other personal information to use the app.</li>
+          <li>We do not require a conventional login account, name, email address, or password to use the app.</li>
+          <li>To protect backend services, the app creates a random installation key. The key stays on your device or browser. Our API receives it when issuing a short-lived access token and stores or uses a one-way SHA-256 digest rather than the original key for authentication, rate limiting, and analytics.</li>
         </ul>
 
         <h3>D. Analytics and Diagnostics Data</h3>
@@ -66,9 +68,12 @@
           <li>platform and OS version</li>
           <li>session information</li>
           <li>feature usage and screen events</li>
-          <li>a device-scoped random identifier created by the app</li>
+          <li>first-touch advertising campaign tags (such as source, medium, and campaign) and the referring site's domain on web, when available; Saymo does not retain the full referring URL in product analytics</li>
+          <li>a pseudonymous one-way installation digest</li>
           <li>crash and error information</li>
         </ul>
+        <p>Our first-party product analytics records events such as opening the app, viewing a screen, starting a learning mode, and completing a lesson. It is designed not to collect lesson text, spoken phrases, dictionary lookup words, names, email addresses, or payment details. These events support aggregated measures such as onboarding funnels, mode usage, completion rates, and return rates.</p>
+        <p>Turning off Private usage analytics stops future product-usage events and clears unsent events on that device. It does not identify or retrospectively delete events that were already received because those events are stored under a pseudonymous installation digest and are not linked to a conventional account.</p>
         <p>We configure Sentry so that default personally identifying information is not sent, and we remove IP address data from Sentry user records if present.</p>
 
         <h3>E. Advertising Data</h3>
@@ -77,7 +82,6 @@
           <li>The app requests non-personalized ads only.</li>
           <li>Even for non-personalized ads, Google and its partners may process certain device, app, and advertising-related information as described in their own policies.</li>
         </ul>
-
         <h3>F. Subscription and Purchase Data</h3>
         <p>If you purchase a subscription:</p>
         <ul>
@@ -85,6 +89,7 @@
           <li>we may receive subscription status and product information needed to enable premium access</li>
           <li>we do not receive or store your payment details</li>
         </ul>
+        <p>Web subscriptions are not currently offered. If this changes, the purchase terms and payment provider will be shown before purchase.</p>
 
         <h3>G. Feedback and Support Data</h3>
         <p>If you choose to send feedback or contact support through the app, we may collect:</p>
@@ -103,6 +108,7 @@
           <li>device or app metadata needed to serve the request</li>
         </ul>
         <p>We do not use this technical request data to identify you personally. It is used only as needed to deliver content, maintain service security and reliability, and troubleshoot technical issues.</p>
+        <p>Saymo's web application, APIs, downloadable dictionaries, audio, and other service data are hosted using Microsoft Azure services. Some requested translation, dialogue, or text-to-speech features may send the text needed to fulfil that request to OpenAI. We do not intentionally include your name or email address in those requests, and we do not send microphone recordings to OpenAI through these features.</p>
       </section>
 
       <section>
@@ -117,6 +123,7 @@
           <li>deliver ads where applicable</li>
           <li>respond to support and feedback submissions</li>
           <li>protect the app against abuse or misuse</li>
+          <li>understand onboarding drop-off, learning-mode usage, lesson completion, and return rates in aggregate</li>
         </ul>
       </section>
 
@@ -139,6 +146,8 @@
           <li>Google Mobile Ads / AdMob: <a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
           <li>Apple App Store / StoreKit: <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a></li>
           <li>Google Play / Google Play Billing: <a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
+          <li>Microsoft Azure: <a href="https://privacy.microsoft.com/privacystatement">Microsoft Privacy Statement</a></li>
+          <li>OpenAI: <a href="https://openai.com/policies/privacy-policy/">OpenAI Privacy Policy</a></li>
         </ul>
         <p>If speech recognition is handled by your device platform or provider, that provider's terms and privacy policy may also apply.</p>
       </section>
@@ -148,7 +157,8 @@
         <p>We retain data for different periods depending on the type of data:</p>
         <ul>
           <li>local progress and settings remain on your device until you clear the app data, use the in-app deletion flow, or uninstall the app</li>
-          <li>analytics, diagnostics, and subscription-related records may be retained for as long as reasonably necessary to operate, secure, troubleshoot, and improve the app, or as required by law</li>
+          <li>first-party product analytics events are normally retained for up to 180 days, unless a shorter or longer period is required for security, legal compliance, or an active investigation</li>
+          <li>diagnostics and subscription-related records may be retained for as long as reasonably necessary to operate, secure, troubleshoot, and improve the app, or as required by law</li>
           <li>support and feedback submissions may be retained as long as needed to respond to and review the submission</li>
         </ul>
       </section>
@@ -160,18 +170,19 @@
         <ul>
           <li>deny microphone or speech-recognition permissions in your device settings</li>
           <li>stop using speaking features</li>
-          <li>use the app's account deletion flow, where available</li>
+          <li>use the app's data-reset or account-deletion flow, where available</li>
+          <li>turn off Private usage analytics in the app's Data &amp; Privacy settings; supported web browsers' Global Privacy Control or Do Not Track signal is also respected</li>
           <li>uninstall the app to remove locally stored app data from your device</li>
         </ul>
         <p>If you have questions about this Privacy Policy or about your privacy choices in Saymo, contact us at the email below.</p>
       </section>
 
       <section>
-        <h2>8. Account and Data Deletion</h2>
-        <p>Saymo includes an in-app deletion flow intended to remove local progress data and reset app data on your device.</p>
+        <h2>8. App Data and Deletion</h2>
+        <p>Saymo includes a data-reset flow intended to remove local progress and settings and reset app data on your device or browser. Mobile versions may label this as account deletion for compatibility, even where no conventional login account exists.</p>
         <p>Please note:</p>
         <ul>
-          <li>uninstalling the app removes local app data stored on your device</li>
+          <li>uninstalling the mobile app, clearing site data, or using Reset app data removes local Saymo data stored on that device or browser</li>
           <li>uninstalling alone may not delete all server-side records associated with diagnostics, analytics, purchases, or feedback submissions</li>
           <li>because some analytics, diagnostics, and feedback records may be anonymous or not directly linked to your identity, we may not be able to identify or delete specific records on request</li>
           <li>for privacy questions, contact us at the email below</li>
