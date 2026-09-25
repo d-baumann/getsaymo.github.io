@@ -9,6 +9,7 @@
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link rel="stylesheet" href="concepts/value-directions.css">
   <link rel="stylesheet" href="concepts/tour-variations.css">
+  <link rel="stylesheet" href="web-entry.css">
   <script src="concepts/scripts.js" defer></script>
   <script src="concepts/tour-variations.js" defer></script>
 </head>
@@ -111,13 +112,19 @@
       <p>Free. No signup. No card.</p>
     </div>
     <div class="tour-v4-footer__aside">
-      <div class="tour-v4-footer__actions" aria-label="Download Saymo">
-        <a class="tour-v4-store" data-store="ios" href="#" aria-label="Download Saymo on the App Store">
-          <img src="assets/images/app-store-badge.svg" alt="Download on the App Store">
+      <div class="tour-v4-footer__actions tour-entry-actions" aria-label="Start learning with Saymo">
+        <a class="tour-web-entry" href="https://app.getsaymo.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="17" rx="3"/><path d="M3 8.5h18M6 6h.1M9 6h.1"/></svg>
+          <span>Try in browser</span>
         </a>
-        <a class="tour-v4-store" data-store="android" href="#" aria-label="Get Saymo on Google Play">
-          <img src="assets/images/google-play-badge.png" alt="Get it on Google Play">
-        </a>
+        <div class="tour-entry-stores">
+          <a class="tour-v4-store" data-store="ios" href="#" aria-label="Download Saymo on the App Store">
+            <img src="assets/images/app-store-badge.svg" alt="Download on the App Store">
+          </a>
+          <a class="tour-v4-store" data-store="android" href="#" aria-label="Get Saymo on Google Play">
+            <img src="assets/images/google-play-badge.png" alt="Get it on Google Play">
+          </a>
+        </div>
       </div>
     </div>
     <nav class="tour-v4-legal" aria-label="Support and legal">
@@ -127,17 +134,23 @@
     </nav>
   </footer>
 
-  <aside class="tour-floating-footer" data-floating-footer aria-label="Download Saymo">
+  <aside class="tour-floating-footer" data-floating-footer aria-label="Start learning with Saymo">
     <div class="tour-floating-footer__meta">
       <p class="tour-floating-footer__copy"><strong>Start learning.</strong><span>Free. No signup. No card.</span></p>
     </div>
-    <div class="tour-floating-footer__actions">
-      <a data-store="ios" href="#" aria-label="Download Saymo on the App Store">
-        <img src="assets/images/app-store-badge.svg" alt="Download on the App Store">
+    <div class="tour-floating-footer__actions tour-entry-actions">
+      <a class="tour-web-entry" href="https://app.getsaymo.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="17" rx="3"/><path d="M3 8.5h18M6 6h.1M9 6h.1"/></svg>
+        <span>Try in browser</span>
       </a>
-      <a data-store="android" href="#" aria-label="Get Saymo on Google Play">
-        <img src="assets/images/google-play-badge.png" alt="Get it on Google Play">
-      </a>
+      <div class="tour-entry-stores">
+        <a data-store="ios" href="#" aria-label="Download Saymo on the App Store">
+          <img src="assets/images/app-store-badge.svg" alt="Download on the App Store">
+        </a>
+        <a data-store="android" href="#" aria-label="Get Saymo on Google Play">
+          <img src="assets/images/google-play-badge.png" alt="Get it on Google Play">
+        </a>
+      </div>
     </div>
   </aside>
 </body>

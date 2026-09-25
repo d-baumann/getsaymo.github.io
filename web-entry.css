@@ -1,0 +1,113 @@
+/* Shared web/mobile entry points on the homepage and final tour slide. */
+.tour-entry-actions,
+.tour-entry-stores {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tour-entry-stores a,
+.tour-entry-stores img {
+  display: block;
+  flex-shrink: 0;
+}
+
+.tour-entry-actions .tour-web-entry {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid #a6a6a6;
+  border-radius: 7px;
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.tour-web-entry svg {
+  width: 21px;
+  height: 21px;
+  flex-shrink: 0;
+}
+
+.tour-entry-actions a:focus-visible {
+  outline: 3px solid #a8b99c;
+  outline-offset: 4px;
+}
+
+/* The store row sets the width; the web button stretches to its exact edges. */
+.tour-v4-footer__actions.tour-entry-actions {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: max-content;
+}
+
+.tour-v4-footer__actions .tour-web-entry {
+  min-height: 52px;
+  font-size: 16px;
+}
+
+.tour-v4-footer__actions .tour-entry-stores img {
+  height: 52px;
+}
+
+@media (max-width: 720px) {
+  .tour-guided-page .tour-floating-footer {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .tour-floating-footer__copy {
+    display: flex;
+    justify-content: center;
+    gap: 5px 10px;
+    text-align: center;
+    font-size: 11px;
+  }
+
+  .tour-floating-footer__copy strong {
+    font-size: 24px;
+  }
+
+  .tour-floating-footer__actions.tour-entry-actions {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: max-content;
+  }
+
+  .tour-entry-actions .tour-entry-stores img {
+    height: 40px;
+  }
+
+  .tour-v4-footer__actions .tour-web-entry {
+    min-height: 42px;
+    font-size: 14px;
+  }
+
+  .tour-guided-page .tour-v4-hero.guided-slide,
+  .tour-guided-page .tour-v4-mode.guided-slide {
+    padding-bottom: 192px;
+  }
+
+  .tour-guided-page .tour-v4-hero h1 {
+    font-size: clamp(40px, 10vw, 60px);
+  }
+
+  .tour-guided-page .tour-v4-hero__screens {
+    min-height: 230px;
+  }
+
+  .tour-guided-page .tour-v4-hero__screens .v3-phone {
+    width: 100px;
+  }
+}
