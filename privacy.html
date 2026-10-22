@@ -22,7 +22,7 @@
   <main class="legal-shell">
     <header class="legal-hero">
       <h1>Privacy Policy</h1>
-      <p class="legal-date">Last updated: October 7, 2026</p>
+      <p class="legal-date">Last updated: October 22, 2026</p>
       <p class="legal-intro">Saymo is a dialogue-based language learning app designed to help users build fluency through immersive, story-driven speaking practice. This Privacy Policy explains what information Saymo may collect, how that information is used, and the choices available to users.</p>
     </header>
 
@@ -30,7 +30,7 @@
 <section>
 <h2>1. Scope</h2>
 <p>This Privacy Policy applies to Saymo on Android, iOS and the web at app.getsaymo.com, and related features, websites, APIs, and services offered to users worldwide. Features and service providers can differ between platforms and app versions.</p>
-<p>The new analytics controls described below are available in the web release and mobile versions that display the adult confirmation in the consent dialog. Older mobile releases may use Firebase usage analytics without these controls. Update when the new mobile release is available, or contact us about data collected by an older version.</p>
+<p>The analytics choices described below are available on the web and in mobile versions that display Help improve Saymo with an adult confirmation. Mobile versions without these controls may use Firebase Analytics. Contact us if you have questions about data collected by your app version.</p>
 </section>
 <section>
 <h2>2. Information We Collect</h2>
@@ -58,10 +58,7 @@
 <li>To protect backend services, the app creates a random installation key. The key stays on your device or browser. Our API receives it when issuing a short-lived access token and stores or uses a one-way SHA-256 digest rather than the original key for authentication, rate limiting, and analytics.</li>
 </ul>
 <h3>D. Analytics and Diagnostics Data</h3>
-<p><strong>Basic usage totals.</strong> Versions with the Basic usage totals setting count feature opens, learning starts and completions, practice actions, hints, failures, English reveals, backward replays, pauses, returns home, screen exits, backgrounding, coarse progress and measured practice or playback seconds. These counters are enabled by default and are separate from optional detailed analytics. Reports contain a feature category, learning language, counter category and count, and may include the selected difficulty, an identifier for a published story or audiobook chapter, and a coarse quarter-of-chapter progress band. Supported German beginner story chapters also report fixed identifiers for published lines, their catalog revision, and counts of playback or controls used on those lines, such as translation, replay and sentence review. Our service immediately combines reports into daily totals and separate content, difficulty, progress and published-line summaries; it does not store linked session histories or cross-tabulate difficulty with chapter positions or lines. It does not retain individual event records, installation or session identifiers, interaction or playback timestamps, answers, recordings, lesson text, campaign tags or device profiles in these counters. The line identifiers refer to Saymo's authored material; they do not contain anything the learner says or types. We use the totals to understand which content is used and where the app needs improvement, not for advertising or to follow individual learners. A background or exit count does not prove that someone abandoned a lesson, and basic totals cannot show an individual learner's journey.</p>
-<p>The app keeps unsent basic counts only in memory and stores your on/off preference locally. It sends these reports without an authentication token, cookies or a referring page URL. Microsoft Azure necessarily receives network connection information to deliver requests; anonymous stored totals do not mean that the network handles no personal data. The usage-count route is excluded from application request logs, and connection metadata is not added to the counter table. We do not combine these totals with installation-linked analytics.</p>
-<p>You can stop future basic counts in Options → Basic usage totals; switching this off also clears unsent counts. Existing explicit refusals from the earlier analytics controls remain off for basic counts until you enable them separately. Supported browser Global Privacy Control and Do Not Track signals also keep basic counters off. Internal development and testing are excluded. These are counts of actions, not unique people; repeats, offline use, older versions and blocked reports affect the totals. Because no installation identifier is retained, a person's contribution cannot be located, exported or deleted separately.</p>
-<p><strong>Optional detailed analytics.</strong> Detailed usage analytics is off by default. It can be enabled only after you choose to share analytics and confirm that you are 18 or older. We store this confirmation and your consent choice locally, together with the notice version and time; we do not ask for a birth date. Older opt-ins without this confirmation are not carried over. Learning features and local progress work with both analytics settings off. Detailed usage events may include:</p>
+<p>Optional usage analytics is off by default. By selecting Share analytics in the Help improve Saymo dialog, you consent to this collection and confirm that you are 18 or older. We store your consent and age confirmation on your device, together with the notice version and the time of your choice; we do not ask for your date of birth. You can use the learning features and save progress without enabling optional analytics. Optional usage events may include:</p>
 <ul>
 <li>app version</li>
 <li>platform and OS version</li>
@@ -71,12 +68,16 @@
 <li>a pseudonymous one-way installation digest</li>
 <li>crash and error information</li>
 </ul>
-<p>Our first-party product analytics records events such as opening the app, viewing a screen, starting a learning mode, and reaching a task or round result. It does not include lesson text, spoken phrases, dictionary lookup words, names, email addresses, or payment details. These events support aggregated measures such as onboarding steps, mode usage, recorded round endings and return rates. Installation-linked events are pseudonymous, not anonymous; participating installations are not necessarily distinct people. The next mobile release removes Firebase Analytics; enabled usage events go only to Saymo's analytics service hosted on Microsoft Azure. Older mobile versions may still send events to Firebase Analytics. The web app does not use Firebase Analytics.</p>
-<p>Turning off Detailed usage analytics (called Private usage analytics in earlier versions) stops future installation-linked usage events and clears unsent detailed events on that device. It does not automatically delete events already received. Options → Your analytics data lets you export or delete retained detailed records for this installation. Deleting these records also turns detailed collection off; local learning progress and the separate basic usage setting are unchanged. Use these controls before resetting app data, which removes the installation key. Supported browser Global Privacy Control and Do Not Track signals keep detailed usage analytics off.</p>
-<p>Error diagnostics are separate from optional product analytics. The web app sends Sentry error types, code locations and the app release identifier, with free-form error messages, learner content, console breadcrumbs, request details and attachments removed. Session replay, performance tracing and automatic session reports are disabled. The project prevents stored IP addresses and scrubs geographic fields. Like any network provider, Sentry receives connection information when accepting requests. Diagnostics run only on the production web host, not local development.</p>
-<p>The next mobile release applies the same content restrictions to JavaScript error reports, retaining only error types, code locations and the app version. Automatic native crash reports, diagnostic breadcrumbs, screenshots, session reports and performance tracing are disabled; development builds do not send diagnostics. Older mobile releases may still send crash details, app/device information and diagnostic breadcrumbs. The project scrubs IP and geographic fields, but the stricter content restrictions should not be assumed to apply to those older versions.</p>
+<p>Our first-party product analytics records events such as opening the app, viewing a screen, starting a learning mode, and reaching a task or round result. It does not include lesson text, spoken phrases, dictionary lookup words, names, email addresses, or payment details. These events support aggregated measures such as onboarding steps, mode usage, recorded round endings and return rates. Installation-linked events are pseudonymous, not anonymous; participating installations are not necessarily distinct people. On the web and in mobile versions with the controls described above, optional usage events are sent only to Saymo&#x27;s analytics service hosted on Microsoft Azure. Mobile versions without these controls may send events to Firebase Analytics. The web app does not use Firebase Analytics.</p>
+<p>Saymo also collects anonymous usage counts independently of optional analytics. These counts have no in-app switch. Supported browser Global Privacy Control and Do Not Track signals stop these counts on the web.</p>
+<p>Reports record a count or duration for a feature, lesson or lesson line, together with the learning language and level. Examples include lesson starts, sentence replays, use of English translations and seconds of practice. We also count first app opens, completed daily practice goals with the current streak length, and completion of the 1st, 5th, 10th or 25th Speak lesson. Reports contain no installation or session ID, account information or device details. We retain only daily totals, which do not identify individual users or devices.</p>
+<p>Our server receives your IP address to deliver each request but does not store it with these counts. We use the totals to understand and improve Saymo, relying on our legitimate interest under GDPR Article 6(1)(f).</p>
+<p>You can turn off Help improve Saymo in Settings → Privacy choices at any time. This stops future optional usage events and clears unsent events on that device. It does not delete records already received or change your local learning progress. Supported browser Global Privacy Control and Do Not Track signals keep optional usage analytics off.</p>
+<p>To request a copy of your retained analytics records or ask us to delete them, email ndebaumann@gmail.com with the privacy ID shown in Settings → Privacy choices. The privacy ID is a shortened form of the one-way installation digest, not your installation key. We delete the records associated with that ID. To stop new records, also turn off Help improve Saymo. Send your request before resetting app data, which removes the installation key and creates a new privacy ID.</p>
+<p>Error diagnostics are separate from optional product analytics. The web app sends Sentry error types, code locations and the app release identifier, with free-form error messages, learner content, console breadcrumbs, request details and attachments removed. Session replay, performance tracing and automatic session reports are disabled. We configure Sentry to exclude IP addresses and geographic fields from stored events. Like any network provider, Sentry receives connection information when accepting requests. Diagnostics run only on the production web host, not local development.</p>
+<p>Mobile versions with the privacy controls described above send JavaScript error reports containing only error types, code locations and the app version. Automatic native crash reports, diagnostic breadcrumbs, screenshots, session reports and performance tracing are disabled in these versions; development builds do not send diagnostics. Other mobile versions may send broader crash details, app and device information, and diagnostic breadcrumbs. Sentry is configured to remove IP addresses and geographic fields from stored events, but the same restrictions on report contents may not apply to those versions.</p>
 <h3>E. Advertising Data</h3>
-<p>Saymo uses Google Mobile Ads to show ads in some mobile versions or flows. The web app does not use this advertising SDK. Advertising is separate from the Private usage analytics setting.</p>
+<p>Saymo uses Google Mobile Ads to show ads in some mobile versions or flows. The web app does not use this advertising SDK. Advertising is separate from the Help improve Saymo usage analytics setting.</p>
 <ul>
 <li>The app requests non-personalized ads only.</li>
 <li>Even for non-personalized ads, Google and its partners may process certain device, app, and advertising-related information as described in their own policies.</li>
@@ -127,10 +128,9 @@
 <h2>4. Legal Bases and Consent</h2>
 <p>Depending on your location, we process information on one or more of the following bases:</p>
 <ul>
-<li>your consent for optional detailed product analytics (GDPR Article 6(1)(a)), which you can withdraw at any time without affecting earlier lawful processing</li>
-<li>our legitimate interest in understanding and improving feature usage for the limited connection-data processing needed to receive basic counters (GDPR Article 6(1)(f)); the retained daily totals contain no individual records, and you can object by turning off Basic usage totals</li>
+<li>your consent for optional product analytics (GDPR Article 6(1)(a)), which you can withdraw at any time without affecting earlier lawful processing</li>
 <li>performance of a contract (Article 6(1)(b)) for requested learning features and purchase entitlements</li>
-<li>our legitimate interests (Article 6(1)(f)) in securing the service, diagnosing failures and responding to support requests, subject to your rights and interests</li>
+<li>our legitimate interests (Article 6(1)(f)) in securing the service, diagnosing failures, responding to support requests and counting anonymous feature and lesson usage, subject to your rights and interests</li>
 <li>compliance with legal obligations (Article 6(1)(c)), including applicable financial recordkeeping and data-protection requests</li>
 </ul>
 <p>Microphone permission gives you control over access to your microphone; it is separate from analytics consent. Any consent required for advertising or other non-essential device access is also separate. We do not use learning scores or analytics to make automated decisions with legal or similarly significant effects on you.</p>
@@ -158,13 +158,13 @@
 <p>We retain data for different periods depending on the type of data:</p>
 <ul>
 <li>local progress and settings remain on your device until you clear the app data, use the in-app deletion flow, or uninstall the app</li>
-<li>basic usage daily totals have a 400-day retention window; scheduled maintenance and bounded cleanup remove older totals</li>
-<li>opt-in first-party product analytics events have a 180-day retention window, with older records removed by a daily scheduled process</li>
+<li>anonymous usage daily totals have a 400-day retention window; scheduled maintenance and bounded cleanup remove older totals</li>
+<li>first-party product analytics events have a 180-day retention window, with older records removed by a daily scheduled process</li>
 <li>long-term daily and monthly statistical snapshots may be retained after detailed events expire. These snapshots exclude installation and session identifiers and suppress small groups. They describe participating installations rather than all users. Historical snapshots are not individual activity histories and are reviewed before external sharing.</li>
-<li>new Sentry error events on the current Developer plan are retained for 30 days</li>
-<li>Azure Monitor diagnostic tables inspected for this service use up to 90 days of retention; this is separate from product analytics and Sentry</li>
+<li>Sentry error events are retained for 30 days</li>
+<li>Azure Monitor diagnostic logs are retained for up to 90 days, separately from product analytics and Sentry</li>
 <li>Azure SQL point-in-time backups use a seven-day window. Independent minimal deletion receipts are replayed before a restored database is reconnected, so deleted analytics are not restored to service</li>
-<li>deletion receipts contain an installation digest and deletion generation, not activity history. They remain necessary while the installation credential can be reused; the current installation credential has no expiry. Receipt expiry must not allow old uploads to restore deleted data</li>
+<li>deletion records contain an installation digest and a deletion version number, not activity history. We retain them for as long as the installation credential can be reused to prevent deleted analytics from being restored or uploaded again. The installation credential does not expire</li>
 <li>subscription records, where applicable, follow the relevant app-store provider retention</li>
 <li>support and feedback submissions may be retained as long as needed to respond to and review the submission</li>
 </ul>
@@ -178,7 +178,7 @@
 <li>deny microphone or speech-recognition permissions in your device settings</li>
 <li>stop using speaking features</li>
 <li>use the app&#x27;s data-reset or account-deletion flow, where available</li>
-<li>turn off Basic usage totals and/or Detailed usage analytics in the app&#x27;s Data &amp; Privacy settings; supported web browsers&#x27; Global Privacy Control or Do Not Track signal is also respected</li>
+<li>turn off Help improve Saymo in Settings → Privacy choices; supported web browsers&#x27; Global Privacy Control or Do Not Track signal is also respected</li>
 <li>uninstall the app to remove locally stored app data from your device</li>
 </ul>
 <p>If you have questions about this Privacy Policy or about your privacy choices in Saymo, contact us at the email below.</p>
@@ -190,14 +190,14 @@
 <ul>
 <li>uninstalling the mobile app, clearing site data, or using Reset app data removes local Saymo data stored on that device or browser</li>
 <li>uninstalling alone may not delete all server-side records associated with diagnostics, analytics, purchases, or feedback submissions</li>
-<li>first-party analytics records can be located with the original installation credential. If it has been lost, we may be unable to identify its records. Provider records and support messages require separate handling; contact us for help</li>
+<li>first-party analytics records can be located with the privacy ID shown in Settings → Privacy choices while that installation&#x27;s key exists. If the key has been lost, for example after Reset app data, we may be unable to identify its records. Provider records and support messages require separate handling; contact us for help</li>
 <li>for privacy questions, contact us at the email below</li>
 </ul>
 </section>
 <section>
 <h2>9. Children&#x27;s Privacy</h2>
 <p>Saymo is intended for learners aged 13 and above on web, Android and iOS. It is not directed to children under 13. If you believe a child under 13 has provided us personal information, contact us and we will review the request.</p>
-<p>The intended minimum age does not override local requirements for parental involvement. Optional detailed usage analytics is restricted to users who confirm that they are 18 or older. Users aged 13–17 can use learning features with detailed analytics off; basic usage totals have their own setting and contain no individual activity history. We do not offer a parental-consent route for enabling detailed analytics for under-18s. This confirmation is a self-declaration, not identity verification.</p>
+<p>The intended minimum age does not override local requirements for parental involvement. Optional usage analytics is available only to users who confirm that they are 18 or older. Learners aged 13–17 can use learning features with optional usage analytics disabled. Parental consent does not enable optional usage analytics for users under 18. Age confirmation is a self-declaration; we do not verify identity.</p>
 </section>
 <section>
 <h2>10. International Data Transfers</h2>
